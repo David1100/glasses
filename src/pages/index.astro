@@ -8,11 +8,11 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<section class="grid grid-cols-12 h-screen">
-		<div class="col-span-9 relative ">
+	<section class="grid grid-cols-12">
+		<div class="lg:col-span-9 col-span-12 relative h-screen">
 			<FaceGlasses client:only="react" />
 		</div>
-		<div class="col-span-3 relative overflow-y-hidden ">
+		<div class="lg:col-span-3 col-span-12 relative overflow-y-hidden ">
 			<Asidebar client:only="react"/>
 		</div>
 	</section>

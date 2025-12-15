@@ -1,0 +1,42 @@
+---
+import { RiArrowLeftLine} from "react-icons/ri";
+import Layout from "../layouts/Layout.astro";
+import DetailsCar from "../components/DetailsCar.jsx";
+import OrderSummary from "../components/OrderSummary.jsx";
+---
+
+<Layout>
+    <main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-30 pb-10">
+        <div
+            class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10"
+        >
+            <div class="flex flex-col gap-2">
+                <h1
+                    class="text-3xl md:text-4xl font-black tracking-tight text-white"
+                >
+                    Tu Carrito de Compras
+                </h1>
+                <p class="text-gray-400 text-base">
+                    Revisa tus artículos y prueba las gafas virtualmente una
+                    última vez.
+                </p>
+            </div>
+            <a
+                class="text-secondary hover:text-primary-dark font-medium flex items-center gap-1 group"
+                href="/"
+            >
+                <RiArrowLeftLine />
+                Seguir comprando
+            </a>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-8 xl:gap-12">
+            <!-- Left Column: Cart Items -->
+             {
+                
+             }
+            <DetailsCar client:only="react"/>
+            <!-- Right Column: Order Summary -->
+            <OrderSummary client:only="react"/>
+        </div>
+    </main>
+</Layout>

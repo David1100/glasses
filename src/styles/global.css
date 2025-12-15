@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #111F22;
+  --color-primary: #101f22;
   --color-secondary: #13C8EC;
   --color-text: white;
   --color-borde: #234248;
@@ -15,11 +15,12 @@
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'inter', sans-serif;
   color: var(--color-text);
+  background-color: var(--color-primary);
 }
 
-button {
+button , a {
   cursor: pointer;
 }
 

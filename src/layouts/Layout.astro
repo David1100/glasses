@@ -1,5 +1,6 @@
 ---
-import Header from '../components/Header.astro'
+import Header from '../components/Header.jsx'
+import { ClientRouter } from "astro:transitions";
 import '../styles/global.css'
 ---
 
@@ -11,9 +12,10 @@ import '../styles/global.css'
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Full Medic</title>
+		<ClientRouter />
 	</head>
 	<body>
-		<Header />
+		<Header client:only="react"/>
 		<main>
 			<slot />
 		</main>

@@ -1,0 +1,70 @@
+[
+    {
+        "id": 1,
+        "montura": "Premium",
+        "marca": "Cartier",
+        "material": "Metal",
+        "genero": "Unisex",
+        "precio": 75000,
+        "colores": [
+            "Dorado",
+            "Plateado"
+        ],
+        "gafas": [
+            {
+                "img": "/gafas/gafa1.webp",
+                "referencia": "CT00501/001",
+                "codigo": "53-20-140"
+            },
+            {
+                "img": "/gafas/rayban.jpg",
+                "referencia": "CT03190/001",
+                "codigo": "55-18-145"
+            },
+            {
+                "img": "/gafas/rayban.jpg",
+                "referencia": "CT02870A/001",
+                "codigo": "55-19-140"
+            },
+            {
+                "img": "/gafas/rayban.jpg",
+                "referencia": "CT02590/001",
+                "codigo": "55-18-140"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "montura": "Kipling",
+        "marca": "Kipling",
+        "material": "Metal",
+        "genero": "Unisex",
+        "precio": 75000,
+        "colores": [
+            "Dorado",
+            "Plateado"
+        ],
+        "gafas": [
+            {
+                "img": "/gafas/rayban.jpg",
+                "referencia": "CT00501/001",
+                "codigo": "53-20-140"
+            },
+            {
+                "img": "/gafas/rayban.jpg",
+                "referencia": "CT03190/001",
+                "codigo": "55-18-145"
+            },
+            {
+                "img": "/gafas/rayban.jpg",
+                "referencia": "CT02870A/001",
+                "codigo": "55-19-140"
+            },
+            {
+                "img": "/gafas/rayban.jpg",
+                "referencia": "CT02590/001",
+                "codigo": "55-18-140"
+            }
+        ]
+    }
+]

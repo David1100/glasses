@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import { FaceMesh } from "@mediapipe/face_mesh"
 import { Camera } from "@mediapipe/camera_utils"
 import { RiLuggageCartFill } from "react-icons/ri"
+import { useCartStore } from "../hooks/useCart"
 
 let globalFaceMesh = null
 let globalCamera = null
@@ -10,19 +11,21 @@ export default function FaceGlasses() {
   const videoRef = useRef(null)
   const canvasRef = useRef(null)
   const glassesImg = useRef(new Image())
+  const { cart, addToCart } = useCartStore();
 
   const [currentGlass, setCurrentGlass] = useState({
-    nombre: "Ray-Ban Hexagonal",
-    material: "Metal / Oro",
-    precio: 145000,
-    imagen: "/gafas/gafa1.webp"
+    marca: "Cartier",
+    material: "Metal",
+    precio: 75000,
+    img: "/gafas/rayban.jpg"
   })
 
   // 🔹 escuchar cambios de gafa
   useEffect(() => {
     const handler = (e) => {
       setCurrentGlass(e.detail)
-      glassesImg.current.src = e.detail.imagen
+      console.log(e.detail)
+      glassesImg.current.src = e.detail.img
     }
 
     window.addEventListener("change-glasses", handler)
@@ -115,21 +118,38 @@ export default function FaceGlasses() {
         ref={canvasRef}
         className="absolute inset-0 w-full h-full pointer-events-none"
       />
+      {
+        currentGlass?.referencia && (
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 ">
+            <div className="bg-primary/90 px-6 py-4 rounded-xl flex items-center justify-between gap-4 lg:w-full w-sm">
+              <div>
+                <h2 className="text-secondary font-bold text-xs">MODELO ACTUAL</h2>
+                <h1 className="text-sm">{currentGlass.referencia}</h1>
+                <p className="text-gray-400 text-xs">{currentGlass.material}</p>
+              </div>
 
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10">
-        <div className="bg-primary/90 px-6 py-4 rounded-xl flex items-center gap-4">
-          <div>
-            <h2 className="text-secondary font-bold text-sm">MODELO ACTUAL</h2>
-            <h1 className="text-lg">{currentGlass.nombre}</h1>
-            <p className="text-gray-400 text-sm">{currentGlass.material}</p>
+              {
+                cart.some(item => item.reference === currentGlass.referencia) ? (
+                  <a href="/carrito" className="bg-secondary rounded-full px-4 py-2 text-sm text-black font-bold flex items-center gap-2">
+                    <RiLuggageCartFill />
+                    Ver carrito
+                  </a>
+                ) : (
+                  <button className="bg-secondary rounded-full px-4 py-2 text-sm text-black font-bold flex items-center gap-2" onClick={() => addToCart({ reference: currentGlass.referencia, id: currentGlass.id, price: currentGlass.precio, marca: currentGlass.marca, montura: currentGlass.montura, cantidad: 1, img: currentGlass.img, material: currentGlass.material })}>
+                    <RiLuggageCartFill />
+                    {
+                      'Añadir ' + currentGlass.precio.toLocaleString()
+                    }
+
+                  </button>
+                )
+              }
+
+            </div>
           </div>
 
-          <button className="bg-secondary rounded-full px-4 py-3 text-black font-bold flex items-center gap-2">
-            <RiLuggageCartFill />
-            Añadir ${currentGlass.precio.toLocaleString()}
-          </button>
-        </div>
-      </div>
+        )
+      }
     </div>
   )
 }
