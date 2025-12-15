@@ -11,7 +11,7 @@ import { useCartStore } from "../hooks/useCart";
 export default function DetailsCar() {
 
 
-    const { cart,removeFromCart } = useCartStore();
+    const { cart, removeFromCart } = useCartStore();
 
     return (
 
@@ -49,7 +49,10 @@ export default function DetailsCar() {
                                     </div>
 
                                     <div className="text-right">
-                                        <p className="text-xl font-bold text-white">${item.price.toLocaleString()}</p>
+                                        <p className="text-xl font-bold text-white">{item.price.toLocaleString('en-US', {
+                                            style: 'currency',
+                                            currency: 'USD',
+                                        })}</p>
                                         {/* <p className="text-xs text-slate-400 line-through">$185.00</p> */}
                                     </div>
                                 </div>

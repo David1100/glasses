@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { FaceMesh } from "@mediapipe/face_mesh"
 import { Camera } from "@mediapipe/camera_utils"
-import { RiLuggageCartFill } from "react-icons/ri"
+import { RiLuggageCartFill, RiUserSmileLine } from "react-icons/ri"
 import { useCartStore } from "../hooks/useCart"
 
 let globalFaceMesh = null
@@ -72,7 +72,7 @@ export default function FaceGlasses() {
 
       const width = (x2 - x1) * 1.9
       const height = width * 0.8
-      const centerX = (x1 + x2) / 2 + width * 0.02
+      const centerX = (x1 + x2) / 2 
       const centerY = n.y * canvas.height + height * 0.12
       const angle = Math.atan2(y2 - y1, x2 - x1)
 
@@ -106,6 +106,16 @@ export default function FaceGlasses() {
 
   return (
     <div className="relative w-full h-full">
+      <div className="absolute top-24 left-6 flex gap-3 z-10">
+        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-red-500 animate-pulse">
+          <div className="size-2 rounded-full bg-red-500"></div>
+          <span className="text-xs font-bold uppercase tracking-wider text-white">En Vivo</span>
+        </div>
+        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-primary">
+          <RiUserSmileLine className="text-secondary"/>
+          <span className="text-xs font-bold uppercase tracking-wider text-white">Rostro Detectado</span>
+        </div>
+      </div>
       <video
         ref={videoRef}
         autoPlay
@@ -121,6 +131,7 @@ export default function FaceGlasses() {
       {
         currentGlass?.referencia && (
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 ">
+
             <div className="bg-primary/90 px-6 py-4 rounded-xl flex items-center justify-between gap-4 lg:w-full w-sm">
               <div>
                 <h2 className="text-secondary font-bold text-xs">MODELO ACTUAL</h2>
@@ -130,15 +141,18 @@ export default function FaceGlasses() {
 
               {
                 cart.some(item => item.reference === currentGlass.referencia) ? (
-                  <a href="/carrito" className="bg-secondary rounded-full px-4 py-2 text-sm text-black font-bold flex items-center gap-2">
+                  <a href="/carrito" className="bg-secondary rounded-full px-4 py-2 text-sm text-black font-bold flex items-center gap-2 shadow-[0_0_20px_rgba(19,200,236,0.3)]">
                     <RiLuggageCartFill />
                     Ver carrito
                   </a>
                 ) : (
-                  <button className="bg-secondary rounded-full px-4 py-2 text-sm text-black font-bold flex items-center gap-2" onClick={() => addToCart({ reference: currentGlass.referencia, id: currentGlass.id, price: currentGlass.precio, marca: currentGlass.marca, montura: currentGlass.montura, cantidad: 1, img: currentGlass.img, material: currentGlass.material })}>
+                  <button className="bg-secondary rounded-full px-4 py-2 text-sm text-black font-bold flex items-center gap-2 shadow-[0_0_20px_rgba(19,200,236,0.3)]" onClick={() => addToCart({ reference: currentGlass.referencia, id: currentGlass.id, price: currentGlass.precio, marca: currentGlass.marca, montura: currentGlass.montura, cantidad: 1, img: currentGlass.img, material: currentGlass.material })}>
                     <RiLuggageCartFill />
                     {
-                      'Añadir ' + currentGlass.precio.toLocaleString()
+                      'Añadir ' + currentGlass.precio.toLocaleString('en-US', {
+                        style: 'currency',
+                        currency: 'USD',
+                      })
                     }
 
                   </button>

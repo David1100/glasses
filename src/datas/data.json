@@ -5,7 +5,7 @@
         "marca": "Cartier",
         "material": "Metal",
         "genero": "Unisex",
-        "precio": 75000,
+        "precio": 700,
         "colores": [
             "Dorado",
             "Plateado"
@@ -39,7 +39,7 @@
         "marca": "Kipling",
         "material": "Metal",
         "genero": "Unisex",
-        "precio": 75000,
+        "precio": 800,
         "colores": [
             "Dorado",
             "Plateado"

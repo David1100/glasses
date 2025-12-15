@@ -140,7 +140,10 @@ export default function Asidebar() {
                                         : "text-white"
                                         }`}
                                 >
-                                    $ {item.precio.toLocaleString()}
+                                    {item.precio.toLocaleString('en-US', {
+                                        style: 'currency',
+                                        currency: 'USD',
+                                    })}
                                 </span>
                             </div>
                         </footer>

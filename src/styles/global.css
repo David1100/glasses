@@ -5,12 +5,17 @@
   --color-secondary: #13C8EC;
   --color-text: white;
   --color-borde: #234248;
+  --background-dark: #101f22;
+  --surface-dark: #172a2d;
 }
 
 @theme {
     --color-primary: var(--color-primary);
     --color-secondary: var(--color-secondary);
     --color-borde: var(--color-borde);
+    --color-background-dark: var(--background-dark);
+    --color-surface-dark: var(--surface-dark);
+    
 }
 
 body {

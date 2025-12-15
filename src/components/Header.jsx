@@ -16,7 +16,6 @@ export default function Header() {
 
       <nav>
         <ul className="flex items-center gap-3 text-sm">
-          <li className="cursor-pointer">Tienda</li>
           <li>
             <a href="/carrito" className="bg-secondary px-4 py-2 rounded-full text-black font-semibold">
               Carrito ({cart.length})

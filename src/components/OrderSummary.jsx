@@ -2,12 +2,11 @@ import { RiCaravanFill, RiLock2Fill, RiVerifiedBadgeFill } from "react-icons/ri"
 import { useCartStore } from "../hooks/useCart";
 
 export default function OrderSummary() {
-
     const { totalPrice } = useCartStore();
+    const subtotal = totalPrice()
+    const impuesto = 24.40
+    const total = subtotal + impuesto
 
-    const impuesto = 2440;
-
-    const total = totalPrice() + impuesto;
 
     return (
         <div className="w-full lg:w-[400px] shrink-0">
@@ -29,7 +28,10 @@ export default function OrderSummary() {
                             >Subtotal</span>
                             <span
                                 className="font-semibold text-white"
-                            >$ {totalPrice().toLocaleString()}</span>
+                            >{subtotal.toLocaleString('en-US', {
+                                style: 'currency',
+                                currency: 'USD',
+                            })}</span>
                         </div>
                         <div className="flex justify-between items-center">
                             <span
@@ -44,7 +46,10 @@ export default function OrderSummary() {
                             >Impuestos</span>
                             <span
                                 className="font-semibold text-white"
-                            >$24.40</span>
+                            >{impuesto.toLocaleString('en-US', {
+                                style: 'currency',
+                                currency: 'USD',
+                            })}</span>
                         </div>
                     </div>
                     <div className="flex justify-between items-end mb-8">
@@ -54,16 +59,19 @@ export default function OrderSummary() {
                         <div className="text-right">
                             <span
                                 className="block text-3xl font-black text-white tracking-tight"
-                            >${total.toLocaleString()}</span>
+                            >{total.toLocaleString('en-US', {
+                                style: 'currency',
+                                currency: 'USD',
+                            })}</span>
                             <span className="text-xs text-slate-400">USD</span>
                         </div>
                     </div>
-                    <button
+                    <a href="/pago"
                         className="w-full h-12 bg-secondary text-slate-900 font-bold rounded-lg transition-all transform active:scale-[0.98] shadow-[0_0_20px_rgba(19,200,236,0.3)] hover:shadow-[0_0_30px_rgba(19,200,236,0.5)] flex items-center justify-center gap-2 mb-4"
                     >
                         <RiLock2Fill />
                         Proceder al Pago
-                    </button>
+                    </a>
                 </div>
                 <div
                     className="bg-white dark:bg-borde/50 rounded-xl p-4 border border-slate-200 dark:border-white/5 flex flex-col gap-3"
