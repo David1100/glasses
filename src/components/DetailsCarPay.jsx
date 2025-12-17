@@ -10,7 +10,7 @@ export default function DetailsCarPay() {
         <>
             {
                 cart.map(item => (
-                    <div className="flex gap-4 mb-6">
+                    <div className="flex gap-4 mb-6" key={item.id}>
                         <div
                             className="relative w-24 h-24 rounded-lg bg-slate-800 p-2 flex items-center justify-center border border-slate-700 flex-shrink-0"
                         >

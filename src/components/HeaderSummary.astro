@@ -1,0 +1,78 @@
+---
+import {
+    RiBankCardFill,
+    RiCaravanFill,
+    RiCheckLine,
+    RiFileTextLine,
+} from "react-icons/ri";
+
+interface Props {
+  step: string;
+}
+
+const { step } = Astro.props;
+
+---
+
+<div class="mb-10 max-w-3xl mx-auto">
+    <div class="relative flex justify-between items-center">
+        <!-- Line background -->
+        <div
+            class="absolute top-1/2 left-0 w-full h-1 bg-slate-800 -translate-y-1/2 rounded-full -z-10"
+        >
+        </div>
+        <!-- Active Line Progress -->
+        <div
+            class={`absolute top-1/2 left-0 ${step == '2' ? 'w-1/3': step == '3' ? 'w-2/3':'w-1'} h-1 bg-secondary -translate-y-1/2 rounded-full -z-10 shadow-[0_0_10px_rgba(19,200,236,0.5)]`}
+        >
+        </div>
+        <!-- Step 1: Active/Completed -->
+        <a href="/carrito" class="flex flex-col items-center gap-2">
+            <div
+                class={`w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-white shadow-lg shadow-sebg-secondary/30 ring-4 ring-background-dark`}
+            >
+                <RiCheckLine />
+            </div>
+            <span
+                class="text-xs font-semibold text-secondary uppercase tracking-wider"
+                >Carrito</span
+            >
+        </a>
+        <!-- Step 2: Current -->
+        <a href="/pago" class="flex flex-col items-center gap-2">
+            <div
+                class={`w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-white shadow-lg shadow-sebg-secondary/30 ring-4 ring-background-dark transition-all ${step === '2' ? 'scale-110':null}`}
+            >
+                <RiCaravanFill />
+            </div>
+            <span
+                class="text-xs font-semibold text-secondary uppercase tracking-wider"
+                >Envío</span
+            >
+        </a>
+        <!-- Step 3: Pending -->
+        <a href="/metodoPago" class="flex flex-col items-center gap-2">
+            <div
+                class={`w-10 h-10 rounded-full ${step === '3' ? 'bg-secondary shadow-sebg-secondary/30 scale-110':'bg-surface-dark border-slate-700 '} flex items-center justify-center text-white shadow-lg  ring-4 ring-background-dark`}
+            >
+                <RiBankCardFill />
+            </div>
+            <span
+                class={`text-xs font-semibold ${step === '3' ? 'text-secondary':'text-slate-500'} uppercase tracking-wider`}
+                >Pago</span
+            >
+        </a>
+        <!-- Step 4: Pending -->
+        <div class="flex flex-col items-center gap-2">
+            <div
+                class="w-10 h-10 rounded-full bg-surface-dark border-2 border-slate-700 flex items-center justify-center text-slate-400 ring-4 ring-background-dark"
+            >
+                <RiFileTextLine />
+            </div>
+            <span
+                class="text-xs font-semibold text-slate-500 uppercase tracking-wider"
+                >Factura</span
+            >
+        </div>
+    </div>
+</div>

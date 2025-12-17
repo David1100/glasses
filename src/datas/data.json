@@ -14,21 +14,25 @@
             {
                 "img": "/gafas/gafa1.webp",
                 "referencia": "CT00501/001",
+                "tRostro": "Redondo",
                 "codigo": "53-20-140"
             },
             {
                 "img": "/gafas/rayban.jpg",
                 "referencia": "CT03190/001",
+                "tRostro": "Redondo",
                 "codigo": "55-18-145"
             },
             {
                 "img": "/gafas/rayban.jpg",
                 "referencia": "CT02870A/001",
+                "tRostro": "Redondo",
                 "codigo": "55-19-140"
             },
             {
                 "img": "/gafas/rayban.jpg",
                 "referencia": "CT02590/001",
+                "tRostro": "Redondo",
                 "codigo": "55-18-140"
             }
         ]
@@ -48,21 +52,25 @@
             {
                 "img": "/gafas/rayban.jpg",
                 "referencia": "CT00501/001",
+                "tRostro": "Alargado",
                 "codigo": "53-20-140"
             },
             {
                 "img": "/gafas/rayban.jpg",
                 "referencia": "CT03190/001",
+                "tRostro": "Alargado",
                 "codigo": "55-18-145"
             },
             {
                 "img": "/gafas/rayban.jpg",
                 "referencia": "CT02870A/001",
+                "tRostro": "Alargado",
                 "codigo": "55-19-140"
             },
             {
                 "img": "/gafas/rayban.jpg",
                 "referencia": "CT02590/001",
+                "tRostro": "Alargado",
                 "codigo": "55-18-140"
             }
         ]
