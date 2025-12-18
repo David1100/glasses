@@ -3,9 +3,7 @@ import { useCartStore } from "../hooks/useCart";
 export default function DetailsCarPay() {
 
     const { cart,totalPrice } = useCartStore();
-    const subtotal = totalPrice()
-    const impuesto = 24.40
-    const total = subtotal + impuesto
+  
     return (
         <>
             {

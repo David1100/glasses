@@ -161,7 +161,7 @@ export default function Formulario() {
                             name="pais"
                             value={form.pais}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white py-[11px]"
+                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white py-2.75 px-4"
                         >
                             <option>España</option>
                             <option>México</option>

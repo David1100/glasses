@@ -2,6 +2,8 @@
 import { RiBankCardFill, RiLockPasswordFill } from "react-icons/ri";
 import HeaderSummary from "../components/HeaderSummary.astro";
 import Layout from "../layouts/Layout.astro";
+import Formulario from "../components/metodoPago/Formulario";
+import DetailsCar from "../components/metodoPago/DetailsCar";
 ---
 
 <Layout>
@@ -29,17 +31,18 @@ import Layout from "../layouts/Layout.astro";
                             <div class="flex items-center justify-between mb-4">
                                 <div class="flex items-center gap-4">
                                     <div
-                                        class="radio-indicator size-5 rounded-full border-2 border-slate-800 flex items-center justify-center"
+                                        class="radio-indicator size-5 rounded-full border-2 border-slate-800 flex items-center justify-center bg-secondary"
                                     >
+                                    <span class="rounded-full bg-primary p-1.25"></span>
                                     </div>
                                     <div class="flex flex-col">
                                         <span
                                             class="text-white text-base font-bold"
-                                            >Credit or Debit Card</span
+                                            >Credito</span
                                         >
                                         <span
-                                            class="text-text-secondary text-sm"
-                                            >Visa, Mastercard, Amex</span
+                                            class="text-gray-400 text-sm"
+                                            >Solicitud de cretido</span
                                         >
                                     </div>
                                 </div>
@@ -73,154 +76,7 @@ import Layout from "../layouts/Layout.astro";
                                 </div>
                             </div>
                             <!-- Expanded Form Content -->
-                            <div
-                                class="flex flex-col gap-5 pt-2 border-t border-slate-800/50 mt-2"
-                            >
-                                <!-- Card Number -->
-                                <div class="flex flex-col gap-2">
-                                    <label
-                                        class="text-xs font-bold text-text-secondary uppercase tracking-wider"
-                                        >Card Number</label
-                                    >
-                                    <div class="relative">
-                                        <RiBankCardFill className="absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary material-symbols-outlined" />
-                                        <input
-                                            class="w-full h-12 rounded-lg bg-input-bg border-transparent focus:border-primary focus:ring-0 text-white pl-12 placeholder:text-gray-500 font-mono outline-none bg-background-dark"
-                                            placeholder="0000 0000 0000 0000"
-                                            type="text"
-                                        />
-                                        <RiLockPasswordFill className="absolute right-4 top-1/2 -translate-y-1/2 text-secondary material-symbols-outlined"/>
-                                    </div>
-                                </div>
-                                <!-- Expiry & CVC -->
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div class="flex flex-col gap-2">
-                                        <label
-                                            class="text-xs font-bold text-text-secondary uppercase tracking-wider"
-                                            >Expiry Date</label
-                                        >
-                                        <input
-                                            class="w-full h-12 rounded-lg bg-input-bg border-transparent focus:border-primary focus:ring-0 text-white px-4 placeholder:text-gray-500 font-mono text-center"
-                                            placeholder="MM / YY"
-                                            type="text"
-                                        />
-                                    </div>
-                                    <div class="flex flex-col gap-2">
-                                        <label
-                                            class="text-xs font-bold text-text-secondary uppercase tracking-wider"
-                                            >CVC / CVV</label
-                                        >
-                                        <div class="relative">
-                                            <input
-                                                class="w-full h-12 rounded-lg bg-input-bg border-transparent focus:border-primary focus:ring-0 text-white px-4 placeholder:text-gray-500 font-mono text-center"
-                                                placeholder="123"
-                                                type="text"
-                                            />
-                                            <span
-                                                class="absolute right-4 top-1/2 -translate-y-1/2 text-text-secondary material-symbols-outlined text-[18px] cursor-help"
-                                                >help</span
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Cardholder Name -->
-                                <div class="flex flex-col gap-2">
-                                    <label
-                                        class="text-xs font-bold text-text-secondary uppercase tracking-wider"
-                                        >Cardholder Name</label
-                                    >
-                                    <input
-                                        class="w-full h-12 rounded-lg bg-input-bg border-transparent focus:border-primary focus:ring-0 text-white px-4 placeholder:text-gray-500"
-                                        placeholder="Full Name on Card"
-                                        type="text"
-                                    />
-                                </div>
-                                <!-- Digital Signature Pad -->
-                                <div class="flex flex-col gap-2 mt-2">
-                                    <div class="flex justify-between items-end">
-                                        <label
-                                            class="text-xs font-bold text-text-secondary uppercase tracking-wider flex items-center gap-1"
-                                        >
-                                            <span
-                                                class="material-symbols-outlined text-[16px]"
-                                                >draw</span
-                                            >
-                                            Digital Signature
-                                        </label>
-                                        <button
-                                            class="text-xs text-primary hover:text-white underline"
-                                            >Clear</button
-                                        >
-                                    </div>
-                                    <div
-                                        class="relative w-full h-32 rounded-xl bg-[#132023] border-2 border-dashed border-slate-800 hover:border-primary/50 transition-colors cursor-crosshair overflow-hidden group/canvas"
-                                    >
-                                        <div
-                                            class="absolute inset-0 flex items-center justify-center text-text-secondary/30 pointer-events-none group-hover/canvas:text-text-secondary/50"
-                                        >
-                                            <span class="text-sm font-medium"
-                                                >Draw your signature here</span
-                                            >
-                                        </div>
-                                        <!-- Simulated signature path -->
-                                        <svg
-                                            class="absolute inset-0 w-full h-full pointer-events-none opacity-0 group-hover/canvas:opacity-10 transition-opacity"
-                                            viewbox="0 0 400 150"
-                                        >
-                                            <path
-                                                d="M50,80 Q100,20 150,80 T250,80"
-                                                fill="none"
-                                                stroke="#13c8ec"
-                                                stroke-width="2"></path>
-                                        </svg>
-                                    </div>
-                                    <p class="text-[10px] text-text-secondary">
-                                        By signing, you agree to the Terms of
-                                        Service and authorize this transaction.
-                                    </p>
-                                </div>
-                                <!-- Biometric Auth -->
-                                <div class="flex flex-col gap-2 mt-2">
-                                    <label
-                                        class="text-xs font-bold text-text-secondary uppercase tracking-wider flex items-center gap-1"
-                                    >
-                                        <span
-                                            class="material-symbols-outlined text-[16px]"
-                                            >fingerprint</span
-                                        >
-                                        Biometric Authentication
-                                    </label>
-                                    <div
-                                        class="flex items-center gap-4 p-4 rounded-xl bg-[#132023] border border-slate-800"
-                                    >
-                                        <button
-                                            class="flex items-center justify-center size-14 rounded-full bg-input-bg border border-primary/30 text-primary shadow-[0_0_15px_rgba(19,200,236,0.2)] hover:shadow-[0_0_25px_rgba(19,200,236,0.4)] hover:bg-[#2a4e56] transition-all duration-300 group/bio"
-                                        >
-                                            <span
-                                                class="material-symbols-outlined text-3xl group-hover/bio:scale-110 transition-transform"
-                                                >fingerprint</span
-                                            >
-                                        </button>
-                                        <div class="flex flex-col">
-                                            <span
-                                                class="text-sm font-bold text-white"
-                                                >Scan Fingerprint</span
-                                            >
-                                            <span
-                                                class="text-xs text-text-secondary"
-                                                >Required to verify identity for
-                                                purchases over $100.</span
-                                            >
-                                        </div>
-                                        <div class="ml-auto">
-                                            <span
-                                                class="px-2 py-1 rounded bg-yellow-500/20 text-yellow-500 text-[10px] font-bold uppercase tracking-wider"
-                                                >Pending</span
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <Formulario />
                         </div>
                     </label>
                     <!-- PayPal (Inactive) -->
@@ -245,7 +101,7 @@ import Layout from "../layouts/Layout.astro";
                                             >PayPal</span
                                         >
                                         <span
-                                            class="text-text-secondary text-sm"
+                                            class="text-gray-400 text-sm"
                                             >You will be redirected to PayPal</span
                                         >
                                     </div>
@@ -281,7 +137,7 @@ import Layout from "../layouts/Layout.astro";
                                             >Google Pay</span
                                         >
                                         <span
-                                            class="text-text-secondary text-sm"
+                                            class="text-gray-400 text-sm"
                                             >Fast checkout with Google</span
                                         >
                                     </div>
@@ -300,139 +156,7 @@ import Layout from "../layouts/Layout.astro";
                 </div>
             </div>
             <!-- Right Column: Order Summary -->
-            <div class="lg:w-[400px] flex flex-col gap-6">
-                <div class="sticky top-24 flex flex-col gap-6">
-                    <!-- Product Card -->
-                    <div
-                        class="bg-surface-dark rounded-xl p-5 border border-slate-800 flex flex-col gap-4"
-                    >
-                        <h3
-                            class="text-lg font-bold text-white border-b border-slate-800 pb-3"
-                        >
-                            Order Summary
-                        </h3>
-                        <!-- Item -->
-                        <div class="flex gap-4">
-                            <div
-                                class="size-20 bg-[#111f22] rounded-lg overflow-hidden shrink-0 border border-slate-800"
-                            >
-                                <div
-                                    class="w-full h-full bg-center bg-contain bg-no-repeat"
-                                    data-alt="Preview of aviator sunglasses with gold frames"
-                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBffuNHr7A_YJt_2BTku_upMhygBscuOBfzgRvOHBJYjPU5eKg6Rhkvquc4CvdrmMseTJ7Fw37oiUMUbzeHBr5WELLw0oY4XzB7dzLfa8SiP3rpwW5fDB-VzmoqDiqeTUTI2NRQmI_4RmcCm7hXxru-RXEtDp6c_vPuKXMZN_BQn_cyostyM5Y0tvXuVMo5oLTauIGvPZFvH8gpJawW1IW_97KHddz0Ja5hxiq0OHEtTvvhDTkdDunz7flRSTFq78584TiWupbt15Lb");'
-                                >
-                                </div>
-                            </div>
-                            <div
-                                class="flex flex-col justify-center flex-1 min-w-0"
-                            >
-                                <div class="flex justify-between items-start">
-                                    <p
-                                        class="text-white font-bold text-sm truncate pr-2"
-                                    >
-                                        Aviator Classic Gold
-                                    </p>
-                                    <p class="text-white font-bold text-sm">
-                                        $165.00
-                                    </p>
-                                </div>
-                                <p class="text-text-secondary text-xs">
-                                    Polarized Green Classic G-15
-                                </p>
-                                <p class="text-text-secondary text-xs mt-1">
-                                    Size: Standard
-                                </p>
-                                <a
-                                    class="text-primary text-xs font-medium mt-1 hover:underline"
-                                    href="#">Edit</a
-                                >
-                            </div>
-                        </div>
-                        <!-- Virtual Try-On Reminder -->
-                        <div
-                            class="bg-primary/10 rounded-lg p-3 flex items-center gap-3"
-                        >
-                            <span
-                                class="material-symbols-outlined text-primary text-xl"
-                                >face</span
-                            >
-                            <p class="text-xs text-text-secondary">
-                                Validated with <span
-                                    class="text-primary font-bold"
-                                    >Virtual Try-On</span
-                                >. Looks great on you!
-                            </p>
-                        </div>
-                        <!-- Costs -->
-                        <div
-                            class="flex flex-col gap-2 pt-2 border-t border-slate-800"
-                        >
-                            <div class="flex justify-between text-sm">
-                                <span class="text-text-secondary">Subtotal</span
-                                >
-                                <span class="text-white">$165.00</span>
-                            </div>
-                            <div class="flex justify-between text-sm">
-                                <span class="text-text-secondary">Shipping</span
-                                >
-                                <span class="text-primary font-medium"
-                                    >Free</span
-                                >
-                            </div>
-                            <div class="flex justify-between text-sm">
-                                <span class="text-text-secondary"
-                                    >Estimated Tax</span
-                                >
-                                <span class="text-white">$12.50</span>
-                            </div>
-                        </div>
-                        <!-- Total -->
-                        <div
-                            class="flex justify-between items-center pt-3 border-t border-slate-800"
-                        >
-                            <span class="text-base font-bold text-white"
-                                >Total</span
-                            >
-                            <div class="flex flex-col items-end">
-                                <span class="text-xl font-black text-primary"
-                                    >$177.50</span
-                                >
-                                <span class="text-[10px] text-text-secondary"
-                                    >USD</span
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Secure Badge -->
-                    <div
-                        class="flex items-center justify-center gap-2 text-text-secondary text-xs bg-surface-dark/50 p-3 rounded-lg"
-                    >
-                        <span
-                            class="material-symbols-outlined text-green-500 text-sm"
-                            >lock</span
-                        >
-                        <span>Payments are SSL encrypted and secure.</span>
-                    </div>
-                    <!-- Pay Button -->
-                    <button
-                        class="w-full h-14 bg-primary hover:bg-primary-dark text-[#111f22] rounded-xl font-bold text-lg shadow-lg shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2"
-                    >
-                        <span>Pay $177.50</span>
-                        <span class="material-symbols-outlined"
-                            >arrow_forward</span
-                        >
-                    </button>
-                    <!-- Disclaimer -->
-                    <p class="text-center text-[10px] text-text-secondary px-4">
-                        By clicking "Pay", you agree to our <a
-                            class="underline hover:text-white"
-                            href="#">Terms</a
-                        > and <a class="underline hover:text-white" href="#"
-                            >Privacy Policy</a
-                        >.
-                    </p>
-                </div>
-            </div>
+            <DetailsCar client:only="react"/>
         </div>
     </main>
 </Layout>

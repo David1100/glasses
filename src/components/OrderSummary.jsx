@@ -36,13 +36,6 @@ export default function OrderSummary() {
                         <div className="flex justify-between items-center">
                             <span
                                 className="text-text-secondary"
-                            >Envío Estimado</span>
-                            <span className="font-semibold text-green-500"
-                            >Gratis</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                            <span
-                                className="text-text-secondary"
                             >Impuestos</span>
                             <span
                                 className="font-semibold text-white"
@@ -92,25 +85,6 @@ export default function OrderSummary() {
                                 className="text-[10px] text-gray-400 "
                             >
                                 Encriptación SSL de 256 bits
-                            </p>
-                        </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                        <div
-                            className="size-8 rounded-full bg-[#234248] flex items-center justify-center text-secondary"
-                        >
-                            <RiCaravanFill />
-                        </div>
-                        <div>
-                            <p
-                                className="text-xs font-bold text-white"
-                            >
-                                Envío y Devoluciones Gratis
-                            </p>
-                            <p
-                                className="text-[10px] text-gray-400"
-                            >
-                                En todos los pedidos superiores a $100
                             </p>
                         </div>
                     </div>
