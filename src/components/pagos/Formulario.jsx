@@ -5,19 +5,18 @@ import { useEnvioStore } from "../../hooks/useEnvioStore";
 export default function Formulario() {
     const { setDetalleEnvio,detalleEnvio } = useEnvioStore();
     const [form, setForm] = useState({
-        email:detalleEnvio?.email,
-        nombre: detalleEnvio?.nombre,
-        apellidos: detalleEnvio?.apellidos,
-        direccion: detalleEnvio?.direccion,
-        ciudad: detalleEnvio?.ciudad,
-        codigoPostal: detalleEnvio?.codigoPostal,
-        pais: detalleEnvio?.pais,
-        telefono: detalleEnvio?.telefono,
-        shipping: detalleEnvio?.shipping,
+        email:detalleEnvio?.email ?? "",
+        nombre: detalleEnvio?.nombre ?? "",
+        apellidos: detalleEnvio?.apellidos ?? "",
+        direccion: detalleEnvio?.direccion ?? "",
+        ciudad: detalleEnvio?.ciudad ?? "",
+        codigoPostal: detalleEnvio?.codigoPostal ?? "",
+        pais: detalleEnvio?.pais ?? "",
+        telefono: detalleEnvio?.telefono ?? "",
+        shipping: detalleEnvio?.shipping ?? "",
     });
 
     const [errors, setErrors] = useState({});
-    const [jsonPreview, setJsonPreview] = useState(null);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -54,7 +53,6 @@ export default function Formulario() {
             ...form,
         };
         setDetalleEnvio(jsonData);
-        setJsonPreview(jsonData);
         location.href= '/metodoPago'
     };
 
@@ -77,7 +75,7 @@ export default function Formulario() {
                             className="text-sm font-medium text-slate-300 mb-1 block"
                         >Correo Electrónico</span >
                         <input
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white focus:ring-2 focus:ring-sebg-secondary focus:border-transparent transition-all px-4 py-2"
+                            className="block w-full rounded-lg bg-background-dark border-slate-700 text-white focus:ring-2 focus:ring-sebg-secondary focus:border-transparent transition-all px-4 py-2"
                             placeholder="ejemplo@correo.com"
                             type="email" value={form.email} name="email"
                             onChange={handleChange}
@@ -94,7 +92,7 @@ export default function Formulario() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-1">
-                        <label className="text-sm font-medium text-slate-300">Nombre</label>
+                        <label className="block text-sm font-medium text-slate-300">Nombre</label>
                         <input
                             name="nombre"
                             value={form.nombre}
@@ -106,7 +104,7 @@ export default function Formulario() {
                     </div>
 
                     <div className="space-y-1">
-                        <label className="text-sm font-medium text-slate-300">Apellidos</label>
+                        <label className="block text-sm font-medium text-slate-300">Apellidos</label>
                         <input
                             name="apellidos"
                             value={form.apellidos}
@@ -118,7 +116,7 @@ export default function Formulario() {
                     </div>
 
                     <div className="col-span-1 md:col-span-2 space-y-1">
-                        <label className="text-sm font-medium text-slate-300">Dirección</label>
+                        <label className="block text-sm font-medium text-slate-300">Dirección</label>
                         <input
                             name="direccion"
                             value={form.direccion}
@@ -130,7 +128,7 @@ export default function Formulario() {
                     </div>
 
                     <div className="space-y-1">
-                        <label className="text-sm font-medium text-slate-300">Ciudad</label>
+                        <label className="block text-sm font-medium text-slate-300">Ciudad</label>
                         <input
                             name="ciudad"
                             value={form.ciudad}
@@ -142,7 +140,7 @@ export default function Formulario() {
                     </div>
 
                     <div className="space-y-1">
-                        <label className="text-sm font-medium text-slate-300">Código Postal</label>
+                        <label className="block text-sm font-medium text-slate-300">Código Postal</label>
                         <input
                             name="codigoPostal"
                             value={form.codigoPostal}
@@ -156,7 +154,7 @@ export default function Formulario() {
                     </div>
 
                     <div className="space-y-1">
-                        <label className="text-sm font-medium text-slate-300">País</label>
+                        <label className="block text-sm font-medium text-slate-300">País</label>
                         <select
                             name="pais"
                             value={form.pais}
@@ -171,7 +169,7 @@ export default function Formulario() {
                     </div>
 
                     <div className="space-y-1">
-                        <label className="text-sm font-medium text-slate-300">Teléfono</label>
+                        <label className="block text-sm font-medium text-slate-300">Teléfono</label>
                         <input
                             name="telefono"
                             value={form.telefono}
@@ -237,12 +235,6 @@ export default function Formulario() {
                     <RiArrowRightLine />
                 </button>
             </div>
-
-            {jsonPreview && (
-                <pre className="mt-6 text-xs text-green-400 bg-black p-4 rounded">
-                    {JSON.stringify(jsonPreview, null, 2)}
-                </pre>
-            )}
         </form>
     );
 }

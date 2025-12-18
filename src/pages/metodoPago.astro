@@ -1,5 +1,4 @@
 ---
-import { RiBankCardFill, RiLockPasswordFill } from "react-icons/ri";
 import HeaderSummary from "../components/HeaderSummary.astro";
 import Layout from "../layouts/Layout.astro";
 import Formulario from "../components/metodoPago/Formulario";
@@ -11,75 +10,55 @@ import DetailsCar from "../components/metodoPago/DetailsCar";
         class="flex-grow py-35 md:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
     >
         <HeaderSummary step="3" />
+
         <div class="w-full max-w-[1200px] flex flex-col lg:flex-row gap-8">
-            <!-- Left Column: Payment Method Selection -->
+
+            <!-- LEFT -->
             <div class="flex-1 flex flex-col gap-6">
-                <!-- Payment Methods Accordion -->
+
+                <!-- MÉTODO DE PAGO -->
                 <div class="flex flex-col gap-4">
-                    <!-- Credit Card (Active) -->
-                    <label class="cursor-pointer group">
-                        <input
-                            checked=""
-                            class="peer sr-only"
-                            name="payment_method"
-                            type="radio"
-                        />
-                        <div
-                            class="radio-content bg-surface-dark rounded-xl border border-slate-800 p-5 transition-all duration-300"
-                        >
-                            <!-- Header of Card Option -->
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="flex items-center gap-4">
-                                    <div
-                                        class="radio-indicator size-5 rounded-full border-2 border-slate-800 flex items-center justify-center bg-secondary"
-                                    >
+
+                    <!-- CRÉDITO -->
+                    <div class="group">
+
+                        <!-- SOLO EL RADIO -->
+                        <label class="flex items-center justify-between cursor-pointer">
+                            <div class="flex items-center gap-4">
+                                <input
+                                    type="radio"
+                                    name="payment_method"
+                                    value="credit"
+                                    checked
+                                    class="peer sr-only"
+                                />
+
+                                <div
+                                    class="size-5 rounded-full border-2 border-slate-800 flex items-center justify-center bg-secondary"
+                                >
                                     <span class="rounded-full bg-primary p-1.25"></span>
-                                    </div>
-                                    <div class="flex flex-col">
-                                        <span
-                                            class="text-white text-base font-bold"
-                                            >Credito</span
-                                        >
-                                        <span
-                                            class="text-gray-400 text-sm"
-                                            >Solicitud de cretido</span
-                                        >
-                                    </div>
                                 </div>
-                                <div class="flex gap-2">
-                                    <div
-                                        class="bg-white/10 rounded px-2 py-1 h-6 w-10 flex items-center justify-center"
-                                        data-alt="Visa Card Icon"
-                                    >
-                                        <!-- Visa-like shape -->
-                                        <div
-                                            class="w-full h-2 bg-white/80 rounded-[1px]"
-                                        >
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="bg-white/10 rounded px-2 py-1 h-6 w-10 flex items-center justify-center"
-                                        data-alt="Mastercard Icon"
-                                    >
-                                        <!-- Mastercard-like shape -->
-                                        <div class="flex -space-x-1">
-                                            <div
-                                                class="size-3 bg-white/60 rounded-full"
-                                            >
-                                            </div>
-                                            <div
-                                                class="size-3 bg-white/80 rounded-full"
-                                            >
-                                            </div>
-                                        </div>
-                                    </div>
+
+                                <div class="flex flex-col">
+                                    <span class="text-white text-base font-bold">
+                                        Crédito
+                                    </span>
+                                    <span class="text-gray-400 text-sm">
+                                        Solicitud de crédito
+                                    </span>
                                 </div>
                             </div>
-                            <!-- Expanded Form Content -->
-                            <Formulario />
+                        </label>
+
+                        <!-- FORMULARIO (FUERA DEL LABEL) -->
+                        <div
+                            class="bg-surface-dark rounded-xl border border-slate-800 p-5 mt-3"
+                        >
+                            <Formulario client:only="react" />
                         </div>
-                    </label>
-                    <!-- PayPal (Inactive) -->
+                    </div>
+
+                    <!-- PAYPAL -->
                     <label class="cursor-pointer group">
                         <input
                             class="peer sr-only"
@@ -87,76 +66,31 @@ import DetailsCar from "../components/metodoPago/DetailsCar";
                             type="radio"
                         />
                         <div
-                            class="radio-content rounded-xl border border-slate-800 p-5 hover:bg-[#1a2c30] transition-colors"
+                            class="rounded-xl border border-slate-800 p-5 hover:bg-[#1a2c30] transition-colors"
                         >
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center gap-4">
                                     <div
-                                        class="radio-indicator size-5 rounded-full border-2 border-slate-800 flex items-center justify-center transition-colors"
-                                    >
-                                    </div>
+                                        class="size-5 rounded-full border-2 border-slate-800"
+                                    ></div>
                                     <div class="flex flex-col">
-                                        <span
-                                            class="text-white text-base font-bold"
-                                            >PayPal</span
-                                        >
-                                        <span
-                                            class="text-gray-400 text-sm"
-                                            >You will be redirected to PayPal</span
-                                        >
+                                        <span class="text-white font-bold">
+                                            PayPal
+                                        </span>
+                                        <span class="text-gray-400 text-sm">
+                                            You will be redirected to PayPal
+                                        </span>
                                     </div>
-                                </div>
-                                <div
-                                    class="text-[#0070ba] font-bold italic text-xl pr-2"
-                                    style="font-family: sans-serif;"
-                                >
-                                    Pay<span class="text-[#003087]">Pal</span>
                                 </div>
                             </div>
                         </div>
                     </label>
-                    <!-- Google Pay (Inactive) -->
-                    <label class="cursor-pointer group">
-                        <input
-                            class="peer sr-only"
-                            name="payment_method"
-                            type="radio"
-                        />
-                        <div
-                            class="radio-content rounded-xl border border-slate-800 p-5 hover:bg-[#1a2c30] transition-colors"
-                        >
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-4">
-                                    <div
-                                        class="radio-indicator size-5 rounded-full border-2 border-slate-800 flex items-center justify-center transition-colors"
-                                    >
-                                    </div>
-                                    <div class="flex flex-col">
-                                        <span
-                                            class="text-white text-base font-bold"
-                                            >Google Pay</span
-                                        >
-                                        <span
-                                            class="text-gray-400 text-sm"
-                                            >Fast checkout with Google</span
-                                        >
-                                    </div>
-                                </div>
-                                <div
-                                    class="flex items-center gap-1 text-white font-medium"
-                                >
-                                    <span class="material-symbols-outlined"
-                                        >payments</span
-                                    >
-                                    <span>Pay</span>
-                                </div>
-                            </div>
-                        </div>
-                    </label>
+
                 </div>
             </div>
-            <!-- Right Column: Order Summary -->
-            <DetailsCar client:only="react"/>
+
+            <!-- RIGHT -->
+            <DetailsCar client:only="react" />
         </div>
     </main>
 </Layout>
