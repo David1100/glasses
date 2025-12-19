@@ -1,16 +1,16 @@
 import { useCartStore } from "../hooks/useCart";
+import { useEnvioStore } from "../hooks/useEnvioStore";
 
-export default function OrderSummaryPay() {
+export default function OrderSummaryPay({shipping}) {
     const { totalPrice } = useCartStore();
+    const { detalleEnvio } = useEnvioStore();
+
     const subtotal = totalPrice()
     const impuesto = 24.40
     const total = subtotal + impuesto
     return (
         <>
-
-            <div
-                className="space-y-3 pt-4 border-t border-slate-700 text-sm text-slate-400"
-            >
+            <div className="space-y-3 pt-4 border-t border-slate-700 text-sm text-slate-400">
                 <div className="flex justify-between">
                     <span>Subtotal</span>
                     <span className="font-medium text-white"
@@ -22,7 +22,7 @@ export default function OrderSummaryPay() {
                 <div className="flex justify-between">
                     <span>Envío</span>
                     <span className="text-green-500 font-medium"
-                    >Gratis</span>
+                    >{shipping ? shipping : detalleEnvio.shipping}</span>
                 </div>
                 <div className="flex justify-between">
                     <span>Impuestos</span>

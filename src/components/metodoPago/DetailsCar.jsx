@@ -1,15 +1,17 @@
 import { RiArrowRightLine } from "react-icons/ri";
 import { useCartStore } from "../../hooks/useCart";
+import { useEnvioStore } from "../../hooks/useEnvioStore";
 
-export default function DetailsCar({ }) {
+export default function DetailsCar() {
 
     const { cart, totalPrice } = useCartStore();
+     const { detalleEnvio } = useEnvioStore();
     const subtotal = totalPrice()
     const impuesto = 24.40
     const total = subtotal + impuesto
 
     return (
-        <div className="lg:w-[400px] flex flex-col gap-6">
+        <div className="lg:w-100 flex flex-col gap-6">
             <div className="sticky top-24 flex flex-col gap-6">
                 <div
                     className="bg-surface-dark rounded-xl p-5 border border-slate-800 flex flex-col gap-4"
@@ -23,7 +25,7 @@ export default function DetailsCar({ }) {
                         cart.map(item => (
                             <div className="flex gap-4">
                                 <div
-                                    className="relative w-24 h-24 rounded-lg bg-slate-800 p-2 flex items-center justify-center border border-slate-700 flex-shrink-0"
+                                    className="relative w-24 h-24 rounded-lg bg-slate-800 p-2 flex items-center justify-center border border-slate-700 shrink-0"
                                 >
                                     <img
                                         alt="Stylish tortoiseshell glasses frames on neutral background"
@@ -76,7 +78,7 @@ export default function DetailsCar({ }) {
                         <div className="flex justify-between text-sm">
                             <span className="text-gray-400">Envio</span>
                             <span className="text-green-400 font-medium"
-                            >Gratis</span>
+                            >{detalleEnvio.shipping}</span>
                         </div>
                         <div className="flex justify-between text-sm">
                             <span className="text-gray-400"

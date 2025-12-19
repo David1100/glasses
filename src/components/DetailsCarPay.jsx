@@ -2,7 +2,7 @@ import { useCartStore } from "../hooks/useCart";
 
 export default function DetailsCarPay() {
 
-    const { cart,totalPrice } = useCartStore();
+    const { cart } = useCartStore();
   
     return (
         <>

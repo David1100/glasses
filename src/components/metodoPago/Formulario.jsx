@@ -11,7 +11,19 @@ export default function Formulario() {
         n_docuemento: "",
         e_mail: "",
         telefono: "",
+        pais: "",
+        ciudad: "",
+        n_seguridad: "",
+        direccion: "",
+        n_empresa: "",
+        cargo: "",
+        direccion_empleo: "",
+        telefono_empleo: "",
+        ingreso_mensual: "",
+        frecuencia_pago: "",
     });
+
+    
     const [errors, setErrors] = useState({});
 
     const handleChange = (e) => {
@@ -35,9 +47,7 @@ export default function Formulario() {
 
             <div className="flex flex-col gap-5 px-0 border-t border-slate-800/50 py-6">
                 <div className="flex justify-between items-center">
-                    <h2
-                        className="text-xl font-bold text-white flex items-center gap-2"
-                    >
+                    <h2 className="text-xl font-bold text-white flex items-center gap-2">
                         <RiAccountPinBoxFill className="text-secondary" />
                         Información de Contacto
                     </h2>
@@ -114,46 +124,46 @@ export default function Formulario() {
                     <div className="space-y-1">
                         <label className="block text-sm font-medium text-slate-300">Pais</label>
                         <input
-                            name="telefono"
-                            value={form.telefono}
+                            name="pais"
+                            value={form.pais}
                             onChange={handleChange}
                             className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
-                            type="number"
+                            type="text"
                         />
-                        {errors.telefono && <p className="text-red-500 text-xs">{errors.telefono}</p>}
+                        {errors.pais && <p className="text-red-500 text-xs">{errors.pais}</p>}
                     </div>
                     <div className="space-y-1">
                         <label className="block text-sm font-medium text-slate-300">Ciudad</label>
                         <input
-                            name="telefono"
-                            value={form.telefono}
+                            name="ciudad"
+                            value={form.ciudad}
                             onChange={handleChange}
                             className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
-                            type="number"
+                            type="text"
                         />
-                        {errors.telefono && <p className="text-red-500 text-xs">{errors.telefono}</p>}
+                        {errors.ciudad && <p className="text-red-500 text-xs">{errors.ciudad}</p>}
                     </div>
                     <div className="space-y-1">
                         <label className="block text-sm font-medium text-slate-300"># de seguro social</label>
                         <input
-                            name="telefono"
-                            value={form.telefono}
+                            name="n_seguridad"
+                            value={form.n_seguridad}
                             onChange={handleChange}
                             className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
                             type="number"
                         />
-                        {errors.telefono && <p className="text-red-500 text-xs">{errors.telefono}</p>}
+                        {errors.n_seguridad && <p className="text-red-500 text-xs">{errors.n_seguridad}</p>}
                     </div>
-                    <div className="col-span-2 space-y-1">
+                    <div className="lg:col-span-2 col-span-1 space-y-1">
                         <label className="block text-sm font-medium text-slate-300">Dirección</label>
                         <input
-                            name="telefono"
-                            value={form.telefono}
+                            name="direccion"
+                            value={form.direccion}
                             onChange={handleChange}
                             className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
                             type="number"
                         />
-                        {errors.telefono && <p className="text-red-500 text-xs">{errors.telefono}</p>}
+                        {errors.direccion && <p className="text-red-500 text-xs">{errors.direccion}</p>}
                     </div>
                 </div>
                 <div className="flex justify-between items-center mt-4">
@@ -168,46 +178,46 @@ export default function Formulario() {
                     <div className="space-y-1">
                         <label className="block text-sm font-medium text-slate-300">Nombre de empresa</label>
                         <input
-                            name="telefono"
-                            value={form.telefono}
+                            name="n_empresa"
+                            value={form.n_empresa}
                             onChange={handleChange}
                             className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
                             type="number"
                         />
-                        {errors.telefono && <p className="text-red-500 text-xs">{errors.telefono}</p>}
+                        {errors.n_empresa && <p className="text-red-500 text-xs">{errors.n_empresa}</p>}
                     </div>
                     <div className="space-y-1">
                         <label className="block text-sm font-medium text-slate-300">Cargo</label>
                         <input
-                            name="telefono"
-                            value={form.telefono}
+                            name="cargo"
+                            value={form.cargo}
                             onChange={handleChange}
                             className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
                             type="number"
                         />
-                        {errors.telefono && <p className="text-red-500 text-xs">{errors.telefono}</p>}
+                        {errors.cargo && <p className="text-red-500 text-xs">{errors.cargo}</p>}
                     </div>
                     <div className="space-y-1">
                         <label className="block text-sm font-medium text-slate-300">Dirección</label>
                         <input
-                            name="telefono"
-                            value={form.telefono}
+                            name="direccion_empleo"
+                            value={form.direccion_empleo}
                             onChange={handleChange}
                             className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
                             type="number"
                         />
-                        {errors.telefono && <p className="text-red-500 text-xs">{errors.telefono}</p>}
+                        {errors.direccion_empleo && <p className="text-red-500 text-xs">{errors.direccion_empleo}</p>}
                     </div>
                     <div className="space-y-1">
                         <label className="block text-sm font-medium text-slate-300">Teléfono</label>
                         <input
-                            name="telefono"
-                            value={form.telefono}
+                            name="telefono_empleo"
+                            value={form.telefono_empleo}
                             onChange={handleChange}
                             className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
                             type="number"
                         />
-                        {errors.telefono && <p className="text-red-500 text-xs">{errors.telefono}</p>}
+                        {errors.telefono_empleo && <p className="text-red-500 text-xs">{errors.telefono_empleo}</p>}
                     </div>
                 </div>
                 <div className="flex justify-between items-center mt-4">
@@ -220,24 +230,24 @@ export default function Formulario() {
                     <div className="space-y-1">
                         <label className="block text-sm font-medium text-slate-300">Ingreso mensual</label>
                         <input
-                            name="telefono"
-                            value={form.telefono}
+                            name="ingreso_mensual"
+                            value={form.ingreso_mensual}
                             onChange={handleChange}
                             className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
                             type="number"
                         />
-                        {errors.telefono && <p className="text-red-500 text-xs">{errors.telefono}</p>}
+                        {errors.ingreso_mensual && <p className="text-red-500 text-xs">{errors.ingreso_mensual}</p>}
                     </div>
                     <div className="space-y-1">
                         <label className="block text-sm font-medium text-slate-300">Frecuencia de pago</label>
                         <input
-                            name="telefono"
-                            value={form.telefono}
+                            name="frecuencia_pago"
+                            value={form.frecuencia_pago}
                             onChange={handleChange}
                             className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
                             type="number"
                         />
-                        {errors.telefono && <p className="text-red-500 text-xs">{errors.telefono}</p>}
+                        {errors.frecuencia_pago && <p className="text-red-500 text-xs">{errors.frecuencia_pago}</p>}
                     </div>
                 </div>
                 <div className="flex justify-between items-center mt-4">

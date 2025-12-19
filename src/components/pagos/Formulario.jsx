@@ -2,7 +2,7 @@ import { useState } from "react";
 import { RiAccountPinBoxFill, RiArrowRightLine, RiCaravanFill, RiMapPinLine } from "react-icons/ri";
 import { useEnvioStore } from "../../hooks/useEnvioStore";
 
-export default function Formulario() {
+export default function Formulario({onShipping}) {
     const { setDetalleEnvio,detalleEnvio } = useEnvioStore();
     const [form, setForm] = useState({
         email:detalleEnvio?.email ?? "",
@@ -20,6 +20,9 @@ export default function Formulario() {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
+        if(name==='shipping'){
+            onShipping(value)
+        }
         setForm({ ...form, [name]: value });
     };
 
@@ -200,7 +203,7 @@ export default function Formulario() {
                             onChange={handleChange}
                             className="h-4 w-4"
                         />
-                        <div className="ml-4 flex-grow">
+                        <div className="ml-4 grow">
                             <span className="block text-sm font-semibold text-white">
                                 Envío Estándar
                             </span>
@@ -216,7 +219,7 @@ export default function Formulario() {
                             onChange={handleChange}
                             className="h-4 w-4"
                         />
-                        <div className="ml-4 flex-grow">
+                        <div className="ml-4 grow">
                             <span className="block text-sm font-semibold text-white">
                                 Envío Express
                             </span>
