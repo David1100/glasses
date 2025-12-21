@@ -18,9 +18,9 @@ export default function DetailsCar() {
         <div className="flex-1 flex flex-col gap-6">
             {
                 cart.map(item => (
-                    <div key={item.reference} className="group bg-[#16292D] rounded-xl p-4 sm:p-6 shadow-sm border border-transparent hover:border-primary/30 transition-all duration-300">
+                    <div key={item.reference} className="group rounded-xl p-4 sm:p-6 shadow-md border border-transparent hover:border-primary/30 transition-all duration-300">
                         <div className="flex flex-col sm:flex-row gap-6">
-                            <div className="relative shrink-0 overflow-hidden rounded-lg bg-[#234248]/30 w-full sm:w-48 aspect-[4/3] flex items-center justify-center">
+                            <div className="relative shrink-0 overflow-hidden rounded-lg bg-[#234248]/30 w-full sm:w-48 aspect-4/3 flex items-center justify-center">
                                 <div
                                     className="w-full h-full bg-contain bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-105"
                                     style={{
@@ -33,7 +33,7 @@ export default function DetailsCar() {
                             <div className="flex flex-1 flex-col justify-between gap-4">
                                 <div className="flex justify-between items-start gap-4">
                                     <div>
-                                        <h3 className="text-lg font-bold text-white">
+                                        <h3 className="text-lg font-bold ">
                                             {item.reference}
                                         </h3>
 
@@ -49,7 +49,7 @@ export default function DetailsCar() {
                                     </div>
 
                                     <div className="text-right">
-                                        <p className="text-xl font-bold text-white">{item.price.toLocaleString('en-US', {
+                                        <p className="text-xl font-bold ">{item.price.toLocaleString('en-US', {
                                             style: 'currency',
                                             currency: 'USD',
                                         })}</p>
@@ -57,15 +57,15 @@ export default function DetailsCar() {
                                     </div>
                                 </div>
 
-                                <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-[#234248]">
+                                <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-gray-100">
                                     <div className="flex items-center gap-4">
-                                        {/* <div className="flex items-center bg-[#16292d] rounded-lg p-1">
+                                        {/* <div className="flex items-center rounded-lg p-1">
                                             <button className="size-8 flex items-center justify-center rounded-md hover:bg-white/10" onClick={() => removeFromCart(item.reference)}>
                                                 <RiSeparator />
                                             </button>
 
                                             <input
-                                                className="w-8 text-center bg-transparent text-sm font-medium text-white"
+                                                className="w-8 text-center bg-transparent text-sm font-medium "
                                                 type="number"
                                                 value={item.cantidad}
                                                 readOnly
@@ -82,7 +82,7 @@ export default function DetailsCar() {
                                         </button>
                                     </div>
 
-                                    <a href="/" className="flex items-center gap-2 text-secondary hover:text-secondary/60 font-semibold text-sm">
+                                    <a href="/" className="flex items-center gap-2 text-primary hover:text-primary/60 font-semibold text-sm">
                                         <RiEyeLine />
                                         Probar de nuevo
                                     </a>

@@ -23,16 +23,16 @@ export default function PagosPadre() {
                 <div className="lg:col-span-5">
                     <div className="sticky top-24 space-y-4">
                         <div
-                            className="bg-surface-dark rounded-xl p-6 md:p-8 shadow-lg border border-slate-800"
+                            className="bg-white rounded-xl p-6 md:p-8 shadow-lg border border-gray-200"
                         >
                             <h3
-                                className="text-lg font-bold text-white mb-6 border-b border-slate-700 pb-4"
+                                className="text-lg font-bold mb-6 border-b border-gray-200 pb-4"
                             >
                                 Resumen del Pedido
                             </h3>
                             <DetailsCarPay client:only="react" />
                             <div
-                                className="mb-6 bg-background-dark rounded-lg p-3 border border-slate-700 flex items-center gap-3"
+                                className="mb-6 bg-background-dark rounded-lg p-3 border border-gray-200 flex items-center gap-3 shadow"
                             >
                                 <div
                                     className="w-12 h-12 rounded-full overflow-hidden border-2 border-sebg-secondary"
@@ -45,14 +45,14 @@ export default function PagosPadre() {
                                     />
                                 </div>
                                 <div>
-                                    <p className="text-xs font-semibold text-secondary">
+                                    <p className="text-xs font-semibold text-primary">
                                         Prueba Virtual Confirmada
                                     </p>
                                     <p className="text-[10px] text-slate-500">
                                         Este modelo se ajusta a tus medidas.
                                     </p>
                                 </div>
-                                <RiCheckboxCircleFill className="text-secondary ml-auto text-lg" />
+                                <RiCheckboxCircleFill className="text-primary ml-auto text-lg" />
                             </div>
                             <OrderSummaryPay client:only="react" shipping={shipping} />
                         </div>

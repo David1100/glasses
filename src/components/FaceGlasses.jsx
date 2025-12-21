@@ -175,13 +175,13 @@ export default function FaceGlasses() {
     <div className="relative w-full h-full overflow-hidden">
 
       {loadingFace && (
-        <div className="absolute inset-0 z-30 flex items-center justify-center bg-black/40 backdrop-blur-sm">
-          <div className="bg-black/70 border border-white/10 rounded-2xl px-6 py-4 flex flex-col items-center gap-3 animate-fade-in">
+        <div className="absolute inset-0 z-30 flex items-center justify-center bg-white/80 backdrop-blur-sm">
+          <div className="bg-white/80 border border-white/10 rounded-2xl px-6 py-4 flex flex-col items-center gap-3 animate-fade-in">
             <div className="relative size-10">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75 animate-ping"></span>
-              <span className="relative inline-flex rounded-full size-10 bg-secondary"></span>
+              <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 animate-ping"></span>
+              <span className="relative inline-flex rounded-full size-10 bg-primary"></span>
             </div>
-            <p className="text-xs uppercase tracking-wider text-gray-200">
+            <p className="text-xs uppercase tracking-wider">
               Analizando rostro...
             </p>
           </div>
@@ -189,17 +189,17 @@ export default function FaceGlasses() {
       )}
 
       <div className="absolute top-24 left-6 flex gap-3 z-10">
-        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/10 animate-pulse">
+        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-white/10 animate-pulse shadow">
           <div className="size-2 rounded-full bg-red-500"></div>
-          <span className="text-xs font-bold uppercase tracking-wider text-white">
+          <span className="text-xs font-bold uppercase tracking-wider">
             En Vivo
           </span>
         </div>
 
         {faceDetected && (
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/10">
-            <RiUserSmileLine className="text-secondary" />
-            <span className="text-xs font-bold uppercase tracking-wider text-white">
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-white/10 shadow">
+            <RiUserSmileLine className="text-primary" />
+            <span className="text-xs font-bold uppercase tracking-wider">
               Rostro Detectado
             </span>
           </div>
@@ -208,16 +208,16 @@ export default function FaceGlasses() {
 
       {faceDetected && faceType && (
         <div className="absolute lg:top-24 top-36 lg:right-6 left-6 lg:left-auto z-10">
-          <div className="bg-black/60 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3 w-56 animate-fade-in">
-            <p className="text-[12px] text-gray-300 uppercase tracking-wide">
+          <div className="bg-white/80 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3 w-56 animate-fade-in shadow">
+            <p className="text-[12px] text-black uppercase tracking-wide">
               Tipo de rostro
             </p>
-            <p className="text-sm font-bold text-secondary mb-2">
+            <p className="text-sm font-bold text-primary mb-2">
               {faceType}
             </p>
             <a
               href={`/?tipo_rostro=${faceType}`}
-              className="block text-center text-xs font-bold bg-secondary text-black rounded-full py-1.5 hover:scale-105 transition"
+              className="block text-center text-xs font-bold bg-linear-to-r from-primary to-secondary  text-white rounded-full py-1.5 hover:scale-105 transition"
             >
               Ver gafas ideales
             </a>
@@ -240,13 +240,13 @@ export default function FaceGlasses() {
 
       {currentGlass?.referencia && (
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 w-xs lg:w-auto">
-          <div className="bg-primary/90 px-6 py-4 rounded-xl flex items-center justify-between gap-4">
+          <div className="bg-white/80 shadow px-6 py-4 rounded-xl flex items-center justify-between gap-4 backdrop-blur-md">
             <div>
-              <h2 className="text-secondary font-bold text-xs">
+              <h2 className="text-primary font-bold text-xs">
                 MODELO ACTUAL
               </h2>
               <h1 className="text-sm">{currentGlass.referencia}</h1>
-              <p className="text-gray-400 text-xs">
+              <p className="text-gray-600 text-xs">
                 {currentGlass.material}
               </p>
             </div>
@@ -256,14 +256,14 @@ export default function FaceGlasses() {
             ) ? (
               <a
                 href="/carrito"
-                className="bg-secondary rounded-full px-4 py-2 text-sm text-black font-bold flex items-center gap-2"
+                className="bg-linear-to-r from-primary to-secondary rounded-full px-4 py-2 text-sm text-white font-bold flex items-center gap-2"
               >
                 <RiLuggageCartFill />
                 Ver carrito
               </a>
             ) : (
               <button
-                className="bg-secondary rounded-full px-4 py-2 text-sm text-black font-bold flex items-center gap-2"
+                className="bg-linear-to-r from-primary to-secondary rounded-full px-4 py-2 text-sm text-white font-bold flex items-center gap-2"
                 onClick={() =>
                   addToCart({
                     reference: currentGlass.referencia,

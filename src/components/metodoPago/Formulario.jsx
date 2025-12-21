@@ -45,122 +45,122 @@ export default function Formulario() {
     return (
         <form onSubmit={handleSubmit} className="space-y-6">
 
-            <div className="flex flex-col gap-5 px-0 border-t border-slate-800/50 py-6">
+            <div className="flex flex-col gap-5 px-0 py-6">
                 <div className="flex justify-between items-center">
-                    <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                        <RiAccountPinBoxFill className="text-secondary" />
+                    <h2 className="text-xl font-bold flex items-center gap-2">
+                        <RiAccountPinBoxFill className="text-primary" />
                         Información de Contacto
                     </h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">Nombre</label>
+                        <label className="block text-sm font-medium text-slate-600">Nombre</label>
                         <input
                             name="nombre"
                             value={form.nombre}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="text"
                         />
                         {errors.nombre && <p className="text-red-500 text-xs">{errors.nombre}</p>}
                     </div>
 
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">Apellidos</label>
+                        <label className="block text-sm font-medium text-slate-600">Apellidos</label>
                         <input
                             name="apellidos"
                             value={form.apellidos}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="text"
                         />
                         {errors.apellidos && <p className="text-red-500 text-xs">{errors.apellidos}</p>}
                     </div>
 
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">Fecha de nacimiento</label>
+                        <label className="block text-sm font-medium text-slate-600">Fecha de nacimiento</label>
                         <input
                             name="f_nacimiento"
                             value={form.f_nacimiento}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="date"
                         />
                         {errors.f_nacimiento && <p className="text-red-500 text-xs">{errors.f_nacimiento}</p>}
                     </div>
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300"># de documento</label>
+                        <label className="block text-sm font-medium text-slate-600"># de documento</label>
                         <input
                             name="n_docuemento"
                             value={form.n_docuemento}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="number"
                         />
                         {errors.n_docuemento && <p className="text-red-500 text-xs">{errors.n_docuemento}</p>}
                     </div>
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">E-mail</label>
+                        <label className="block text-sm font-medium text-slate-600">E-mail</label>
                         <input
                             name="e_mail"
                             value={form.e_mail}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="mail"
                         />
                         {errors.e_mail && <p className="text-red-500 text-xs">{errors.e_mail}</p>}
                     </div>
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">Teléfono</label>
+                        <label className="block text-sm font-medium text-slate-600">Teléfono</label>
                         <input
                             name="telefono"
                             value={form.telefono}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="number"
                         />
                         {errors.telefono && <p className="text-red-500 text-xs">{errors.telefono}</p>}
                     </div>
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">Pais</label>
+                        <label className="block text-sm font-medium text-slate-600">Pais</label>
                         <input
                             name="pais"
                             value={form.pais}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="text"
                         />
                         {errors.pais && <p className="text-red-500 text-xs">{errors.pais}</p>}
                     </div>
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">Ciudad</label>
+                        <label className="block text-sm font-medium text-slate-600">Ciudad</label>
                         <input
                             name="ciudad"
                             value={form.ciudad}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="text"
                         />
                         {errors.ciudad && <p className="text-red-500 text-xs">{errors.ciudad}</p>}
                     </div>
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300"># de seguro social</label>
+                        <label className="block text-sm font-medium text-slate-600"># de seguro social</label>
                         <input
                             name="n_seguridad"
                             value={form.n_seguridad}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="number"
                         />
                         {errors.n_seguridad && <p className="text-red-500 text-xs">{errors.n_seguridad}</p>}
                     </div>
                     <div className="lg:col-span-2 col-span-1 space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">Dirección</label>
+                        <label className="block text-sm font-medium text-slate-600">Dirección</label>
                         <input
                             name="direccion"
                             value={form.direccion}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="number"
                         />
                         {errors.direccion && <p className="text-red-500 text-xs">{errors.direccion}</p>}
@@ -168,83 +168,83 @@ export default function Formulario() {
                 </div>
                 <div className="flex justify-between items-center mt-4">
                     <h2
-                        className="text-xl font-bold text-white flex items-center gap-2"
+                        className="text-xl font-bold  flex items-center gap-2"
                     >
-                        <RiMapPinLine className="text-secondary" />
+                        <RiMapPinLine className="text-primary" />
                         Información del Empleo Actual
                     </h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">Nombre de empresa</label>
+                        <label className="block text-sm font-medium text-slate-600">Nombre de empresa</label>
                         <input
                             name="n_empresa"
                             value={form.n_empresa}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="number"
                         />
                         {errors.n_empresa && <p className="text-red-500 text-xs">{errors.n_empresa}</p>}
                     </div>
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">Cargo</label>
+                        <label className="block text-sm font-medium text-slate-600">Cargo</label>
                         <input
                             name="cargo"
                             value={form.cargo}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="number"
                         />
                         {errors.cargo && <p className="text-red-500 text-xs">{errors.cargo}</p>}
                     </div>
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">Dirección</label>
+                        <label className="block text-sm font-medium text-slate-600">Dirección</label>
                         <input
                             name="direccion_empleo"
                             value={form.direccion_empleo}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="number"
                         />
                         {errors.direccion_empleo && <p className="text-red-500 text-xs">{errors.direccion_empleo}</p>}
                     </div>
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">Teléfono</label>
+                        <label className="block text-sm font-medium text-slate-600">Teléfono</label>
                         <input
                             name="telefono_empleo"
                             value={form.telefono_empleo}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="number"
                         />
                         {errors.telefono_empleo && <p className="text-red-500 text-xs">{errors.telefono_empleo}</p>}
                     </div>
                 </div>
                 <div className="flex justify-between items-center mt-4">
-                    <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                        <RiBitCoinLine className="text-secondary" />
+                    <h2 className="text-xl font-bold  flex items-center gap-2">
+                        <RiBitCoinLine className="text-primary" />
                         Información de Ingresos
                     </h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">Ingreso mensual</label>
+                        <label className="block text-sm font-medium text-slate-600">Ingreso mensual</label>
                         <input
                             name="ingreso_mensual"
                             value={form.ingreso_mensual}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="number"
                         />
                         {errors.ingreso_mensual && <p className="text-red-500 text-xs">{errors.ingreso_mensual}</p>}
                     </div>
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">Frecuencia de pago</label>
+                        <label className="block text-sm font-medium text-slate-600">Frecuencia de pago</label>
                         <input
                             name="frecuencia_pago"
                             value={form.frecuencia_pago}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="number"
                         />
                         {errors.frecuencia_pago && <p className="text-red-500 text-xs">{errors.frecuencia_pago}</p>}
@@ -252,24 +252,24 @@ export default function Formulario() {
                 </div>
                 <div className="flex justify-between items-center mt-4">
                     <h2
-                        className="text-xl font-bold text-white flex items-center gap-2"
+                        className="text-xl font-bold  flex items-center gap-2"
                     >
-                        <RiArchive2Line className="text-secondary" />
+                        <RiArchive2Line className="text-primary" />
                         Documentación
                     </h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-                    <div className="group/file relative w-full h-28 bg-[#132023] border-2 border-dashed border-[#325e67] hover:border-primary/50 rounded-xl flex flex-col items-center justify-center cursor-pointer transition-all">
-                        <RiFileList3Line className="material-symbols-outlined text-gray-400 group-hover/file:text-secondary mb-1 transition-colors" />
-                        <span className="text-xs font-bold text-white">Seguro social</span>
-                        <span className="text-[10px] text-text-secondary">PDF o Imagen</span>
+                    <div className="group/file relative w-full h-28 bg-gray-200 border-2 border-dashed border-gray-400 hover:border-primary/50 rounded-xl flex flex-col items-center justify-center cursor-pointer transition-all">
+                        <RiFileList3Line className="material-symbols-outlined text-gray-600 group-hover/file:text-primary mb-1 transition-colors" />
+                        <span className="text-xs font-bold ">Seguro social</span>
+                        <span className="text-[10px] text-text-primary">PDF o Imagen</span>
                         <input className="absolute inset-0 opacity-0 cursor-pointer" type="file" />
                     </div>
-                    <div className="group/file relative w-full h-28 bg-[#132023] border-2 border-dashed border-[#325e67] hover:border-primary/50 rounded-xl flex flex-col items-center justify-center cursor-pointer transition-all">
-                        <RiFileList3Line className="material-symbols-outlined text-gray-400 group-hover/file:text-secondary mb-1 transition-colors" />
-                        <span className="text-xs font-bold text-white">Desprendibles de pago(2 ultimos)</span>
-                        <span className="text-[10px] text-text-secondary text-center px-1">PDF o Imagen</span>
+                    <div className="group/file relative w-full h-28 bg-gray-200 border-2 border-dashed border-gray-400 hover:border-primary/50 rounded-xl flex flex-col items-center justify-center cursor-pointer transition-all">
+                        <RiFileList3Line className="material-symbols-outlined text-gray-600 group-hover/file:text-primary mb-1 transition-colors" />
+                        <span className="text-xs font-bold ">Desprendibles de pago(2 ultimos)</span>
+                        <span className="text-[10px] text-text-primary text-center px-1">PDF o Imagen</span>
                         <input className="absolute inset-0 opacity-0 cursor-pointer" type="file" />
                     </div>
                 </div>
@@ -284,19 +284,19 @@ export default function Formulario() {
                     Autenticación biométrica
                 </label>
                 <div
-                    className="flex items-center gap-4 p-4 rounded-xl bg-[#132023] border border-slate-800"
+                    className="flex items-center gap-4 p-4 rounded-xl bg-gray-100 border border-gray-200"
                 >
                     <button
-                        className="flex items-center justify-center size-14 rounded-full bg-input-bg border border-secondary/30 text-secondary shadow-[0_0_15px_rgba(19,200,236,0.2)] hover:shadow-[0_0_25px_rgba(19,200,236,0.4)] hover:bg-[#2a4e56] transition-all duration-300 group/bio"
+                        className="flex items-center justify-center size-14 rounded-full bg-input-bg border border-primary/30 text-primary shadow-[0_0_15px_rgba(19,200,236,0.2)] hover:shadow-[0_0_25px_rgba(19,200,236,0.4)] hover:bg-primary/20 transition-all duration-300 group/bio"
                     >
                         <RiAttachmentLine className="material-symbols-outlined text-3xl group-hover/bio:scale-110 transition-transform" />
                     </button>
                     <div className="flex flex-col">
                         <span
-                            className="text-sm font-bold text-white"
+                            className="text-sm font-bold "
                         >Escanear huella digital</span>
                         <span
-                            className="text-xs text-gray-400"
+                            className="text-xs text-gray-600"
                         >Se requiere verificar la identidad por credito digital.</span>
                     </div>
                     <div className="ml-auto">

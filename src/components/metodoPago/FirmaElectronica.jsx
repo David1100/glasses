@@ -108,7 +108,7 @@ export default function FirmaElectronica({ onSave }) {
                 <button
                     type="button"
                     onClick={clear}
-                    className="text-xs text-secondary hover:text-white underline"
+                    className="text-xs text-primary hover:text-gray-400 underline"
                 >
                     Limpiar
                 </button>
@@ -119,8 +119,8 @@ export default function FirmaElectronica({ onSave }) {
                 ref={wrapperRef}
                 className="
                     relative w-full h-32 rounded-xl
-                    bg-[#132023]
-                    border-2 border-dashed border-slate-800
+                    bg-gray-200
+                    border-2 border-dashed border-gray-400
                     hover:border-primary/50
                     transition-colors
                     cursor-crosshair
@@ -141,7 +141,7 @@ export default function FirmaElectronica({ onSave }) {
                 />
 
                 {!signed && (
-                    <div className="absolute inset-0 flex items-center justify-center text-gray-400/30 pointer-events-none">
+                    <div className="absolute inset-0 flex items-center justify-center text-gray-800/30 pointer-events-none">
                         <span className="text-sm font-medium">
                             Dibuja tu firma aquí
                         </span>

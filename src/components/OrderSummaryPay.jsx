@@ -10,10 +10,10 @@ export default function OrderSummaryPay({shipping}) {
     const total = subtotal + impuesto
     return (
         <>
-            <div className="space-y-3 pt-4 border-t border-slate-700 text-sm text-slate-400">
+            <div className="space-y-3 pt-4 border-t border-gray-200 text-sm text-slate-400">
                 <div className="flex justify-between">
                     <span>Subtotal</span>
-                    <span className="font-medium text-white"
+                    <span className="font-medium "
                     >{subtotal.toLocaleString('en-US', {
                         style: 'currency',
                         currency: 'USD',
@@ -26,18 +26,18 @@ export default function OrderSummaryPay({shipping}) {
                 </div>
                 <div className="flex justify-between">
                     <span>Impuestos</span>
-                    <span className="font-medium text-white"
+                    <span className="font-medium "
                     >{impuesto.toLocaleString('en-US', {
                         style: 'currency',
                         currency: 'USD',
                     })}</span>
                 </div>
             </div>
-            <div className="mt-6 pt-4 border-t border-slate-700">
+            <div className="mt-6 pt-4 border-t border-gray-200">
                 <div className="flex justify-between items-end">
-                    <span className="text-lg font-bold text-white"
+                    <span className="text-lg font-bold "
                     >Total</span>
-                    <span className="text-2xl font-bold text-secondary"
+                    <span className="text-2xl font-bold text-primary"
                     >{total.toLocaleString('en-US', {
                         style: 'currency',
                         currency: 'USD',

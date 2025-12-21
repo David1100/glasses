@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #101f22;
-  --color-secondary: #13C8EC;
-  --color-text: white;
+  --color-primary: #4FA3FF;
+  --color-secondary: #25a7a7;
+  --color-text: black;
   --color-borde: #234248;
-  --background-dark: #101f22;
+  --background-dark: #f8fbff;
   --surface-dark: #172a2d;
 }
 
@@ -22,7 +22,7 @@ body {
   margin: 0;
   font-family: 'inter', sans-serif;
   color: var(--color-text);
-  background-color: var(--color-primary);
+  background-color: white;
 }
 
 button , a {

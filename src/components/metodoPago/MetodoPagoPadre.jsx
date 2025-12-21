@@ -24,13 +24,13 @@ export default function MetodoPagoPadre() {
                                 />
 
                                 <div
-                                    className="size-5 rounded-full border-2 border-slate-800 flex items-center justify-center bg-secondary"
+                                    className="size-5 rounded-full border-2 border-gray-200 flex items-center justify-center bg-primary"
                                 >
-                                    <span className="rounded-full bg-primary p-1.25"></span>
+                                    <span className="rounded-full bg-white p-1.25"></span>
                                 </div>
 
                                 <div className="flex flex-col">
-                                    <span className="text-white text-base font-bold">
+                                    <span className="text-base font-bold">
                                         Crédito
                                     </span>
                                     <span className="text-gray-400 text-sm">
@@ -41,7 +41,7 @@ export default function MetodoPagoPadre() {
                         </label>
 
                         <div
-                            className="bg-surface-dark rounded-xl border border-slate-800 p-5 mt-3"
+                            className="bg-white rounded-xl shadow border border-gray-200 p-5 mt-3"
                         >
                             <Formulario client:only="react" />
                         </div>
@@ -54,15 +54,15 @@ export default function MetodoPagoPadre() {
                             type="radio"
                         />
                         <div
-                            className="rounded-xl border border-slate-800 p-5 hover:bg-[#1a2c30] transition-colors"
+                            className="rounded-xl border border-gray-200 p-5  transition-all"
                         >
                             <div className="flex items-center justify-between">
                                 <div className="flex items-center gap-4">
                                     <div
-                                        className="size-5 rounded-full border-2 border-slate-800"
+                                        className="size-5 rounded-full border-2 border-gray-200"
                                     ></div>
                                     <div className="flex flex-col">
-                                        <span className="text-white font-bold">
+                                        <span className="font-bold">
                                             PayPal
                                         </span>
                                         <span className="text-gray-400 text-sm">

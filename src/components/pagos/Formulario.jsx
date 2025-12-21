@@ -62,23 +62,23 @@ export default function Formulario({onShipping}) {
     return (
         <form onSubmit={handleSubmit} className="space-y-6">
             <div
-                className="bg-surface-dark rounded-xl p-6 md:p-8 shadow-sm border border-slate-800"
+                className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-gray-200"
             >
                 <div className="flex justify-between items-center mb-6">
                     <h2
-                        className="text-xl font-bold text-white flex items-center gap-2"
+                        className="text-xl font-bold flex items-center gap-2"
                     >
-                        <RiAccountPinBoxFill className="text-secondary" />
+                        <RiAccountPinBoxFill className="text-primary" />
                         Información de Contacto
                     </h2>
                 </div>
                 <div className="space-y-4">
                     <label className="block">
                         <span
-                            className="text-sm font-medium text-slate-300 mb-1 block"
+                            className="text-sm font-medium  mb-1 block"
                         >Correo Electrónico</span >
                         <input
-                            className="block w-full rounded-lg bg-background-dark border-slate-700 text-white focus:ring-2 focus:ring-sebg-secondary focus:border-transparent transition-all px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             placeholder="ejemplo@correo.com"
                             type="email" value={form.email} name="email"
                             onChange={handleChange}
@@ -87,68 +87,68 @@ export default function Formulario({onShipping}) {
                     </label>
                 </div>
             </div>
-            <div className="bg-surface-dark rounded-xl p-6 md:p-8 shadow-sm border border-slate-800">
-                <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                    <RiMapPinLine className="text-secondary" />
+            <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-gray-200">
+                <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
+                    <RiMapPinLine className="text-primary" />
                     Dirección de Envío
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">Nombre</label>
+                        <label className="block text-sm font-medium ">Nombre</label>
                         <input
                             name="nombre"
                             value={form.nombre}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="text"
                         />
                         {errors.nombre && <p className="text-red-500 text-xs">{errors.nombre}</p>}
                     </div>
 
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">Apellidos</label>
+                        <label className="block text-sm font-medium ">Apellidos</label>
                         <input
                             name="apellidos"
                             value={form.apellidos}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="text"
                         />
                         {errors.apellidos && <p className="text-red-500 text-xs">{errors.apellidos}</p>}
                     </div>
 
                     <div className="col-span-1 md:col-span-2 space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">Dirección</label>
+                        <label className="block text-sm font-medium ">Dirección</label>
                         <input
                             name="direccion"
                             value={form.direccion}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="text"
                         />
                         {errors.direccion && <p className="text-red-500 text-xs">{errors.direccion}</p>}
                     </div>
 
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">Ciudad</label>
+                        <label className="block text-sm font-medium ">Ciudad</label>
                         <input
                             name="ciudad"
                             value={form.ciudad}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="text"
                         />
                         {errors.ciudad && <p className="text-red-500 text-xs">{errors.ciudad}</p>}
                     </div>
 
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">Código Postal</label>
+                        <label className="block text-sm font-medium ">Código Postal</label>
                         <input
                             name="codigoPostal"
                             value={form.codigoPostal}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="text"
                         />
                         {errors.codigoPostal && (
@@ -157,12 +157,12 @@ export default function Formulario({onShipping}) {
                     </div>
 
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">País</label>
+                        <label className="block text-sm font-medium ">País</label>
                         <select
                             name="pais"
                             value={form.pais}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white py-2.75 px-4"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2.5 text-gray-700"
                         >
                             <option>España</option>
                             <option>México</option>
@@ -172,12 +172,12 @@ export default function Formulario({onShipping}) {
                     </div>
 
                     <div className="space-y-1">
-                        <label className="block text-sm font-medium text-slate-300">Teléfono</label>
+                        <label className="block text-sm font-medium ">Teléfono</label>
                         <input
                             name="telefono"
                             value={form.telefono}
                             onChange={handleChange}
-                            className="w-full rounded-lg bg-background-dark border-slate-700 text-white px-4 py-2"
+                            className="block w-full rounded-lg bg-white border-gray-300 shadow border outline-none transition-all px-4 py-2 text-gray-700"
                             type="tel"
                         />
                         {errors.telefono && (
@@ -187,14 +187,14 @@ export default function Formulario({onShipping}) {
                 </div>
             </div>
 
-            <div className="bg-surface-dark rounded-xl p-6 md:p-8 shadow-sm border border-slate-800 mt-6">
-                <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                    <RiCaravanFill className="text-secondary" />
+            <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-gray-200 mt-6">
+                <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
+                    <RiCaravanFill className="text-primary" />
                     Método de Envío
                 </h2>
 
                 <div className="space-y-3">
-                    <label className={`${form.shipping === "standard" ? 'bg-secondary/10 border-secondary' : 'bg-transparent border-slate-700 '} relative flex items-center p-4 rounded-lg border cursor-pointer`}>
+                    <label className={`${form.shipping === "standard" ? 'bg-primary/10 border-primary' : 'bg-transparent border-gray-200 '} relative flex items-center p-4 rounded-lg border cursor-pointer`}>
                         <input
                             type="radio"
                             name="shipping"
@@ -204,13 +204,13 @@ export default function Formulario({onShipping}) {
                             className="h-4 w-4"
                         />
                         <div className="ml-4 grow">
-                            <span className="block text-sm font-semibold text-white">
+                            <span className="block text-sm font-semibold text-gray-400">
                                 Envío Estándar
                             </span>
                         </div>
-                        <span className="text-sm font-bold text-white">Gratis</span>
+                        <span className="text-sm font-bold">Gratis</span>
                     </label>
-                    <label className={`${form.shipping === "express" ? 'bg-secondary/10 border-secondary' : 'bg-transparent border-slate-700 '} relative flex items-center p-4 rounded-lg border cursor-pointer`}>
+                    <label className={`${form.shipping === "express" ? 'bg-primary/10 border-primary' : 'bg-transparent border-gray-200 '} relative flex items-center p-4 rounded-lg border cursor-pointer`}>
                         <input
                             type="radio"
                             name="shipping"
@@ -220,11 +220,11 @@ export default function Formulario({onShipping}) {
                             className="h-4 w-4"
                         />
                         <div className="ml-4 grow">
-                            <span className="block text-sm font-semibold text-white">
+                            <span className="block text-sm font-semibold text-gray-400">
                                 Envío Express
                             </span>
                         </div>
-                        <span className="text-sm font-bold text-white">€9.90</span>
+                        <span className="text-sm font-bold ">€9.90</span>
                     </label>
                 </div>
             </div>
@@ -232,7 +232,7 @@ export default function Formulario({onShipping}) {
             <div className="flex justify-end pt-4">
                 <button
                     type="submit"
-                    className="bg-secondary text-white font-semibold py-3 px-8 rounded-lg flex items-center gap-2"
+                    className="bg-linear-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-lg flex items-center gap-2"
                 >
                     Continuar al Pago
                     <RiArrowRightLine />

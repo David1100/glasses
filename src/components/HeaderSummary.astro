@@ -18,54 +18,54 @@ const { step } = Astro.props;
     <div class="relative flex justify-between items-center">
         <!-- Line background -->
         <div
-            class="absolute top-1/2 left-0 w-full h-1 bg-slate-800 -translate-y-1/2 rounded-full -z-10"
+            class="absolute top-1/2 left-0 w-full h-1 bg-gray-200 -translate-y-1/2 rounded-full -z-10"
         >
         </div>
         <!-- Active Line Progress -->
         <div
-            class={`absolute top-1/2 left-0 ${step == '2' ? 'w-1/3': step == '3' ? 'w-2/3':'w-1'} h-1 bg-secondary -translate-y-1/2 rounded-full -z-10 shadow-[0_0_10px_rgba(19,200,236,0.5)]`}
+            class={`absolute top-1/2 left-0 ${step == '2' ? 'w-1/3': step == '3' ? 'w-2/3':'w-1'} h-1 bg-primary -translate-y-1/2 rounded-full -z-10 shadow-[0_0_10px_rgba(19,200,236,0.5)]`}
         >
         </div>
         <!-- Step 1: Active/Completed -->
         <div class="flex flex-col items-center gap-2">
             <div
-                class={`w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-white shadow-lg shadow-sebg-secondary/30 ring-4 ring-background-dark`}
+                class={`w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white shadow-lg shadow-sebg-primary/30 ring-4 ring-background-dark`}
             >
                 <RiCheckLine />
             </div>
             <span
-                class="text-xs font-semibold text-secondary uppercase tracking-wider"
+                class="text-xs font-semibold text-primary uppercase tracking-wider"
                 >Carrito</span
             >
         </div>
         <!-- Step 2: Current -->
         <div class="flex flex-col items-center gap-2">
             <div
-                class={`w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-white shadow-lg shadow-sebg-secondary/30 ring-4 ring-background-dark transition-all ${step === '2' ? 'scale-110':null}`}
+                class={`w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white shadow-lg shadow-sebg-primary/30 ring-4 ring-background-dark transition-all ${step === '2' ? 'scale-110':null}`}
             >
                 <RiCaravanFill />
             </div>
             <span
-                class="text-xs font-semibold text-secondary uppercase tracking-wider"
+                class="text-xs font-semibold text-primary uppercase tracking-wider"
                 >Envío</span
             >
         </div>
         <!-- Step 3: Pending -->
         <div class="flex flex-col items-center gap-2">
             <div
-                class={`w-10 h-10 rounded-full ${step === '3' ? 'bg-secondary shadow-sebg-secondary/30 scale-110':'bg-surface-dark border-slate-700 '} flex items-center justify-center text-white shadow-lg  ring-4 ring-background-dark`}
+                class={`w-10 h-10 rounded-full ${step === '3' ? 'bg-primary shadow-sebg-primary/30 scale-110':'bg-gray-200 border-gray-200 '} flex items-center justify-center text-white shadow-lg  ring-4 ring-background-dark`}
             >
                 <RiBankCardFill />
             </div>
             <span
-                class={`text-xs font-semibold ${step === '3' ? 'text-secondary':'text-slate-500'} uppercase tracking-wider`}
+                class={`text-xs font-semibold ${step === '3' ? 'text-primary':'text-slate-500'} uppercase tracking-wider`}
                 >Pago</span
             >
         </div>
         <!-- Step 4: Pending -->
         <div class="flex flex-col items-center gap-2">
             <div
-                class="w-10 h-10 rounded-full bg-surface-dark border-2 border-slate-700 flex items-center justify-center text-slate-400 ring-4 ring-background-dark"
+                class="w-10 h-10 rounded-full bg-gray-200 border-2 border-gray-200 flex items-center justify-center text-slate-400 ring-4 ring-background-dark"
             >
                 <RiFileTextLine />
             </div>
