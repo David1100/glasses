@@ -1,12 +1,27 @@
 import DetailsCar from "./DetailsCar";
 import EstepIndicator from "../StepIndicator";
 import Formulario from "./Formulario";
+import { useRef } from "react";
+import FaceGlasses3D from "../Glasses3D";
 
 export default function MetodoPagoPadre() {
-    
+    const formRef = useRef(null);
+
+    const handleComprar = () => {
+        const isValid = formRef.current?.submitFormulario();
+
+        if (!isValid) {
+            console.log("Formulario inválido");
+            return;
+        }
+
+        console.log("Formulario OK → continuar pago");
+        // redirect / pago / API
+    };
     return (
         <>
             <div className="flex-1 flex flex-col gap-6">
+        <FaceGlasses3D />
 
                 <div className="flex flex-col gap-4">
                     <EstepIndicator step="3" />
@@ -43,7 +58,7 @@ export default function MetodoPagoPadre() {
                         <div
                             className="bg-white rounded-xl shadow border border-gray-200 p-5 mt-3"
                         >
-                            <Formulario client:only="react" />
+                            <Formulario client:only="react" ref={formRef}/>
                         </div>
                     </div>
 
@@ -75,7 +90,7 @@ export default function MetodoPagoPadre() {
                     </label>
                 </div>
             </div>
-            <DetailsCar client:only="react" />
+            <DetailsCar client:only="react" onComprar={handleComprar}/>
         </>
     )
 }

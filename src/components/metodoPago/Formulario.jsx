@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { forwardRef, useImperativeHandle, useState } from "react";
 import { RiAccountPinBoxFill, RiArchive2Line, RiAttachmentLine, RiBallPenLine, RiBankCardFill, RiBitCoinLine, RiFileList3Line, RiLockPasswordFill, RiMapPinLine } from "react-icons/ri";
 import FirmaElectronica from "./FirmaElectronica";
 
-export default function Formulario() {
+const Formulario = forwardRef((props, ref) => {
     const [firma, setFirma] = useState(null);
+
     const [form, setForm] = useState({
         nombre: "",
         apellidos: "",
@@ -23,27 +24,40 @@ export default function Formulario() {
         frecuencia_pago: "",
     });
 
-    
     const [errors, setErrors] = useState({});
+
+    const validate = () => {
+        const newErrors = {};
+
+        Object.entries(form).forEach(([key, value]) => {
+            if (!value) newErrors[key] = "Campo obligatorio";
+        });
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const submitFormulario = () => {
+        if (!validate()) return false;
+
+        // aquí puedes guardar en zustand si quieres
+        return true;
+    };
+
+    useImperativeHandle(ref, () => ({
+        submitFormulario,
+    }));
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setForm({ ...form, [name]: value });
+        setForm(prev => ({
+            ...prev,
+            [name]: value
+        }));
     };
-    const handleSubmit = (e) => {
-        e.preventDefault();
 
-        if (!validate()) return;
-
-        const jsonData = {
-            ...form,
-        };
-        setDetalleEnvio(jsonData);
-        setJsonPreview(jsonData);
-        location.href = '/metodoPago'
-    };
     return (
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form className="space-y-6">
 
             <div className="flex flex-col gap-5 px-0 py-6">
                 <div className="flex justify-between items-center">
@@ -307,5 +321,7 @@ export default function Formulario() {
                 </div>
             </div>
         </form>
-    )
-}
+    );
+});
+
+export default Formulario;

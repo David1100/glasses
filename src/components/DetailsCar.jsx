@@ -13,6 +13,28 @@ export default function DetailsCar() {
 
     const { cart, removeFromCart } = useCartStore();
 
+    if (!cart || cart.length === 0) {
+        return (
+            <div className="flex-1 flex items-center justify-center py-20">
+                <div className="flex flex-col items-center">
+                    <img src="/empty.svg" className="mb-4" width={180} alt="" />
+                    <p className="text-lg font-bold mb-2">
+                        Tu carrito está vacío
+                    </p>
+                    <p className="text-sm text-gray-400 mb-4">
+                        Agrega un producto para continuar
+                    </p>
+                    <a
+                        href="/"
+                        className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary/70"
+                    >
+                        <RiEyeLine />
+                        Ver productos
+                    </a>
+                </div>
+            </div>
+        );
+    }
     return (
 
         <div className="flex-1 flex flex-col gap-6">

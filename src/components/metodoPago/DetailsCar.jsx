@@ -2,7 +2,7 @@ import { RiArrowRightLine } from "react-icons/ri";
 import { useCartStore } from "../../hooks/useCart";
 import { useEnvioStore } from "../../hooks/useEnvioStore";
 
-export default function DetailsCar() {
+export default function DetailsCar({onComprar }) {
 
     const { cart, totalPrice } = useCartStore();
      const { detalleEnvio } = useEnvioStore();
@@ -23,7 +23,7 @@ export default function DetailsCar() {
                     </h3>
                     {
                         cart.map(item => (
-                            <div className="flex gap-4">
+                            <div className="flex gap-4" key={item.reference}>
                                 <div
                                     className="relative w-24 h-24 rounded-lg bg-gray-200 p-2 flex items-center justify-center border border-gray-300 shrink-0"
                                 >
@@ -106,7 +106,7 @@ export default function DetailsCar() {
                     </div>
                 </div>
                 <button
-                    className="w-full bg-linear-to-r from-primary to-secondary h-14 bg-secondary  text-white rounded-xl font-bold text-lg shadow-lg shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2"
+                    className="w-full bg-linear-to-r from-primary to-secondary h-14 bg-secondary  text-white rounded-xl font-bold text-lg shadow-lg shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2" onClick={onComprar}
                 >
                     <span>Comprar</span>
                 </button>

@@ -2,10 +2,8 @@ import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
 export type Product = {
-    id: number;
-    price: number;
     reference: string;
-    montura: string;
+    price: number;
     marca: string;
     cantidad: number;
     img: string;

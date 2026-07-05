@@ -22,7 +22,7 @@ export default function OrderSummaryPay({shipping}) {
                 <div className="flex justify-between">
                     <span>Envío</span>
                     <span className="text-green-500 font-medium"
-                    >{shipping ? shipping : detalleEnvio.shipping}</span>
+                    >{shipping ?? detalleEnvio?.shipping ?? "Free"}</span>
                 </div>
                 <div className="flex justify-between">
                     <span>Impuestos</span>
