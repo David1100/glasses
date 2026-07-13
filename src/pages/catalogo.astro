@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CatalogView from "../components/Catalogo.jsx";
+---
+
+<Layout>
+    <main class="grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-20">
+        <div class="mb-8">
+            <span class="text-xs font-semibold text-primary uppercase tracking-widest">
+                Catálogo
+            </span>
+            <h1 class="text-3xl md:text-4xl font-black tracking-tight mt-2">
+                Todas las monturas
+            </h1>
+            <p class="text-gray-400 text-base mt-2 max-w-xl">
+                Explora nuestra colección completa de monturas. Filtra por categoría o busca tu modelo favorito.
+            </p>
+        </div>
+        <CatalogView client:only="react" />
+    </main>
+</Layout>

@@ -98,7 +98,7 @@ export default function Asidebar() {
     }
 
     return (
-        <aside className="w-full h-full bg-white p-5 flex flex-col gap-4 lg:mt-20 mt-0 shadow">
+        <aside className="w-full h-full bg-white p-5 flex flex-col gap-4 my-2 shadow">
             <div>
                 <h2 className="text-xl font-bold mb-4">Elige tu estilo</h2>
                 <div className="relative">
@@ -221,7 +221,7 @@ export default function Asidebar() {
                                                 : "text-white"
                                                 }`}
                                         >
-                                            ${product.priceSale_product.toLocaleString("en-US", {
+                                            {product.priceSale_product.toLocaleString("en-US", {
                                                 style: "currency",
                                                 currency: "USD"
                                             })}

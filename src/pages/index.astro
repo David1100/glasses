@@ -1,19 +1,22 @@
 ---
-import Asidebar from '../components/Asidebar';
-import FaceGlasses from '../components/FaceGlasses';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import HeroBanner from '../components/HeroBanner.jsx';
+import BrandSlider from '../components/BrandSlider.jsx';
+import GenderSection from '../components/GenderSection.jsx';
+import CategoriesSection from '../components/CategoriesSection.jsx';
+import FaceTypesSection from '../components/FaceTypesSection.jsx';
+import BannerCarousel from '../components/BannerCarousel.jsx';
+import FeaturedProducts from '../components/FeaturedProducts.jsx';
+import CTASection from '../components/CTASection.jsx';
 ---
 
 <Layout>
-	<section class="grid grid-cols-12">
-		<div class="lg:col-span-9 col-span-12 relative h-screen">
-			<FaceGlasses client:only="react" />
-		</div>
-		<div class="lg:col-span-3 col-span-12 relative overflow-y-hidden ">
-			<Asidebar client:only="react"/>
-		</div>
-	</section>
+	<HeroBanner client:only="react" />
+	<BrandSlider client:only="react" />
+	<GenderSection client:only="react" />
+	<CategoriesSection client:only="react" />
+	<FaceTypesSection client:only="react" />
+	<BannerCarousel client:only="react" />
+	<FeaturedProducts client:only="react" />
+	<CTASection client:only="react" />
 </Layout>

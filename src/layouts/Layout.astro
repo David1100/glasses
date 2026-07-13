@@ -9,16 +9,18 @@ import '../styles/global.css'
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.jpg" />
+		<link rel="icon" type="image/webp" href="/favicon_fullmedic.webp" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Full Medic</title>
 		<ClientRouter />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&family=Inter:wght@300..700&display=swap" rel="stylesheet" />
 	</head>
-	<body>
-		<Header client:only="react"/>
-		<main>
+	<body class="flex flex-col min-h-screen">
+		<Header client:only="react" />
+		<main class="flex-1 pt-14" transition:animate="slide">
 			<slot />
 		</main>
 	</body>
 </html>
-

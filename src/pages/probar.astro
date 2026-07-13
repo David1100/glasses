@@ -1,0 +1,20 @@
+---
+import Asidebar from '../components/Asidebar';
+import FaceGlasses from '../components/FaceGlasses';
+import MobileGlassesDrawer from '../components/MobileGlassesDrawer';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<div class="h-full overflow-hidden">
+		<section class="grid grid-cols-12 h-full">
+			<div class="lg:col-span-9 col-span-12 relative h-full">
+				<FaceGlasses client:only="react" />
+				<MobileGlassesDrawer client:only="react" />
+			</div>
+			<div class="lg:col-span-3 col-span-12 relative overflow-y-hidden max-lg:hidden h-full">
+				<Asidebar client:only="react"/>
+			</div>
+		</section>
+	</div>
+</Layout>
